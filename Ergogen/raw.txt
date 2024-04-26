@@ -1,0 +1,46 @@
+units:
+  spacing: U
+  key_size: 18.2
+  big_key_height: 23
+
+
+points:
+  key.height: key_size
+  key.width: key_size
+  key.spread: spacing
+  zones:
+    matrix:
+      key:
+      columns:
+        outer:
+        pinky:
+        ring:
+          key.stagger: spacing/4
+        middle:
+          key.stagger: spacing/4
+        index:
+          key.stagger: -spacing/4
+        inner:
+          key.stagger: -spacing/4
+      rows:
+        bottom:
+        top:
+        home:
+    thumbfan:
+      anchor:
+        ref: matrix_index_bottom
+        shift: [-spacing/2.5, -spacing*1.2]
+        rotate: -29
+      columns:
+        near:
+          rows.thumb_extra.skip: true
+        home:
+          key.height: big_key_height
+          key.stagger: (big_key_height - key_size) / 2
+          rows.thumb_extra.skip: true
+        far:
+          rows.thumb.height: big_key_height
+          key.padding: big_key_height / 2 + key_size / 2 + 0.8
+      rows:
+        thumb:
+        thumb_extra:
