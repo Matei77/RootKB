@@ -430,7 +430,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "RootKB.kicad_pro",
+    "filename": "RootKB-Right.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -574,16 +574,8 @@
   },
   "sheets": [
     [
-      "0c2cbd49-2b01-43b0-9677-f94c74442f6c",
+      "a0f4b89e-6591-4bef-a49d-95c8dc104b8c",
       "Root"
-    ],
-    [
-      "62440cea-b46f-4de4-bb8c-1f63e06c1b35",
-      "Left"
-    ],
-    [
-      "9d1df52a-f9f0-4295-81ef-6b995e940531",
-      "Right"
     ]
   ],
   "text_variables": {}
