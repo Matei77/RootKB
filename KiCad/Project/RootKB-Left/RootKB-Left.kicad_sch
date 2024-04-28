@@ -1755,28 +1755,10 @@
 		(uuid "01ff2472-cc72-4571-9c4f-6065fdf84710")
 	)
 	(junction
-		(at 124.46 46.99)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0664928e-3fb7-4e69-8bbf-0aa723ae0451")
-	)
-	(junction
-		(at 250.19 110.49)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "098c9525-d281-4dbc-9175-35cafa36ef58")
-	)
-	(junction
 		(at 49.53 59.69)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "0fe4a598-3ffc-4539-bd84-d89d6924c7d2")
-	)
-	(junction
-		(at 260.35 68.58)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "1164cdab-ca38-452a-99d8-c662132a44de")
 	)
 	(junction
 		(at 135.89 46.99)
@@ -1833,6 +1815,18 @@
 		(uuid "2745d029-8ec0-425b-a190-7fd2bce7db24")
 	)
 	(junction
+		(at 135.89 29.21)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "28bf8f65-29e6-4899-9ce9-cbcf29af7280")
+	)
+	(junction
+		(at 262.89 68.58)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "296312ad-14a9-4d94-825b-b0fcb580a2f9")
+	)
+	(junction
 		(at 250.19 46.99)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1861,12 +1855,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3a8bf3ac-dfe4-4dd7-89a9-15a12acd6929")
-	)
-	(junction
-		(at 135.89 29.21)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4211361e-0d63-4243-9e50-5a0a481a7156")
 	)
 	(junction
 		(at 24.13 59.69)
@@ -1917,6 +1905,12 @@
 		(uuid "670fc1d0-2889-4b37-ba63-4e4ce62c0305")
 	)
 	(junction
+		(at 158.75 90.17)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "68a214a9-2030-40e3-85a3-d9555c4c72a1")
+	)
+	(junction
 		(at 62.23 59.69)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1957,6 +1951,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8d296cd2-bf25-4f4b-9128-542ddc31e77b")
+	)
+	(junction
+		(at 123.19 68.58)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "913975e0-a266-47b7-82a5-b7b2f6957627")
 	)
 	(junction
 		(at 80.01 72.39)
@@ -2007,6 +2007,12 @@
 		(uuid "b635b415-943e-4512-b682-a81cf6c0ce3b")
 	)
 	(junction
+		(at 181.61 110.49)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b68d1a3e-8969-4986-82a5-b7dffdd91363")
+	)
+	(junction
 		(at 250.19 90.17)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2029,12 +2035,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "be998c75-f549-4545-a0aa-daff9d5576e2")
-	)
-	(junction
-		(at 250.19 29.21)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "bea71234-cf92-455e-bac1-ef02e7d08657")
 	)
 	(junction
 		(at 41.91 50.8)
@@ -2121,8 +2121,8 @@
 		(uuid "fd425b9b-6360-4c54-90b2-10482f508e5e")
 	)
 	(no_connect
-		(at 173.99 101.6)
-		(uuid "c9d4a1d8-e5da-4f2a-ba84-d70e869167ea")
+		(at 257.81 101.6)
+		(uuid "1708eacb-7ef2-4e97-8530-7f19820a2e43")
 	)
 	(wire
 		(pts
@@ -2133,16 +2133,6 @@
 			(type default)
 		)
 		(uuid "015ab52a-d10a-451d-9ed1-fa09afef5bf2")
-	)
-	(wire
-		(pts
-			(xy 121.92 46.99) (xy 124.46 46.99)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0279fb6d-5f9f-418a-9207-88599517d4f5")
 	)
 	(wire
 		(pts
@@ -2176,13 +2166,13 @@
 	)
 	(wire
 		(pts
-			(xy 250.19 29.21) (xy 260.35 29.21)
+			(xy 181.61 90.17) (xy 158.75 90.17)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "05feaf52-3b4f-46f7-b018-0b9a3b989fb2")
+		(uuid "084ee353-febd-456b-909f-6eca9985dd50")
 	)
 	(wire
 		(pts
@@ -2236,6 +2226,16 @@
 	)
 	(wire
 		(pts
+			(xy 262.89 68.58) (xy 262.89 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "12d90954-1ce4-43ec-8d16-17927fc88361")
+	)
+	(wire
+		(pts
 			(xy 166.37 36.83) (xy 173.99 36.83)
 		)
 		(stroke
@@ -2266,6 +2266,16 @@
 	)
 	(wire
 		(pts
+			(xy 265.43 68.58) (xy 262.89 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1673275d-6fa0-40a7-bb98-0ca5c9dce3ff")
+	)
+	(wire
+		(pts
 			(xy 181.61 66.04) (xy 181.61 68.58)
 		)
 		(stroke
@@ -2286,6 +2296,16 @@
 	)
 	(wire
 		(pts
+			(xy 128.27 78.74) (xy 128.27 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "19aaac8d-fb2f-4407-8c8f-061e76fdd4cf")
+	)
+	(wire
+		(pts
 			(xy 62.23 38.1) (xy 62.23 59.69)
 		)
 		(stroke
@@ -2293,6 +2313,16 @@
 			(type default)
 		)
 		(uuid "19d817a2-0cb3-40e3-9494-6cf79ce993f0")
+	)
+	(wire
+		(pts
+			(xy 135.89 29.21) (xy 123.19 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1c1654c9-19bd-4054-85c0-85e7f0a16321")
 	)
 	(wire
 		(pts
@@ -2333,16 +2363,6 @@
 			(type default)
 		)
 		(uuid "1dfcb3f4-d327-4fcb-ba7a-a15350ac4092")
-	)
-	(wire
-		(pts
-			(xy 257.81 78.74) (xy 257.81 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1e777a20-71a2-4b0b-a5d1-115db163317a")
 	)
 	(wire
 		(pts
@@ -2486,6 +2506,16 @@
 	)
 	(wire
 		(pts
+			(xy 250.19 46.99) (xy 262.89 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3558bace-b436-4f82-a561-112465fbbb56")
+	)
+	(wire
+		(pts
 			(xy 80.01 50.8) (xy 92.71 50.8)
 		)
 		(stroke
@@ -2503,6 +2533,16 @@
 			(type default)
 		)
 		(uuid "3e3681b1-6373-4a7f-acc8-f07b6eda4eb6")
+	)
+	(wire
+		(pts
+			(xy 123.19 68.58) (xy 123.19 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3f1baedb-55a4-4d7b-96ee-4693e75d0dd9")
 	)
 	(wire
 		(pts
@@ -2566,13 +2606,13 @@
 	)
 	(wire
 		(pts
-			(xy 124.46 46.99) (xy 124.46 90.17)
+			(xy 123.19 29.21) (xy 123.19 68.58)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4a2c7bf7-8361-42be-8ae9-83fc1715ef35")
+		(uuid "49c974da-f10c-419b-a9a9-a9d5d72e6380")
 	)
 	(wire
 		(pts
@@ -2593,26 +2633,6 @@
 			(type default)
 		)
 		(uuid "4f4f3786-8eab-4083-96a3-f3951213f587")
-	)
-	(wire
-		(pts
-			(xy 128.27 29.21) (xy 135.89 29.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4f89e056-cc6f-47eb-88ce-97b9daaeb2b9")
-	)
-	(wire
-		(pts
-			(xy 250.19 68.58) (xy 260.35 68.58)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "52a02ec9-4921-496b-82f1-8c7c1a5de613")
 	)
 	(wire
 		(pts
@@ -2696,16 +2716,6 @@
 	)
 	(wire
 		(pts
-			(xy 260.35 68.58) (xy 260.35 110.49)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "619e7c40-6106-429a-a1a8-136bb005d361")
-	)
-	(wire
-		(pts
 			(xy 80.01 72.39) (xy 92.71 72.39)
 		)
 		(stroke
@@ -2713,6 +2723,16 @@
 			(type default)
 		)
 		(uuid "62ea459b-66b7-4fed-8e63-bdf0b213d978")
+	)
+	(wire
+		(pts
+			(xy 257.81 58.42) (xy 257.81 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "63eef397-ebb5-45a4-9759-83d4c84d3f27")
 	)
 	(wire
 		(pts
@@ -2936,13 +2956,13 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 46.99) (xy 124.46 46.99)
+			(xy 128.27 101.6) (xy 173.99 101.6)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "8e055144-94d1-4e99-a5a4-2a2247b48801")
+		(uuid "8eb2d8ba-44cf-4bb9-80fe-25e722ac697f")
 	)
 	(wire
 		(pts
@@ -2966,16 +2986,6 @@
 	)
 	(wire
 		(pts
-			(xy 250.19 110.49) (xy 260.35 110.49)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "957f4673-9816-4bd6-b436-5551c3c2a3c2")
-	)
-	(wire
-		(pts
 			(xy 227.33 90.17) (xy 250.19 90.17)
 		)
 		(stroke
@@ -2993,6 +3003,16 @@
 			(type default)
 		)
 		(uuid "9971c750-7d01-4cb0-8826-b915558f88b0")
+	)
+	(wire
+		(pts
+			(xy 158.75 90.17) (xy 135.89 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "99d09ba2-7c10-429e-9345-d66a9ec82199")
 	)
 	(wire
 		(pts
@@ -3026,6 +3046,16 @@
 	)
 	(wire
 		(pts
+			(xy 135.89 90.17) (xy 135.89 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9f755b1d-5d25-4439-b479-a2d52d6b3728")
+	)
+	(wire
+		(pts
 			(xy 100.33 93.98) (xy 92.71 93.98)
 		)
 		(stroke
@@ -3056,16 +3086,6 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 58.42) (xy 128.27 78.74)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b0242f20-6e18-4ce2-9b15-794e484b9456")
-	)
-	(wire
-		(pts
 			(xy 234.95 58.42) (xy 242.57 58.42)
 		)
 		(stroke
@@ -3073,6 +3093,16 @@
 			(type default)
 		)
 		(uuid "b10eea2c-0233-44d9-9440-7bbd79d4f493")
+	)
+	(wire
+		(pts
+			(xy 120.65 68.58) (xy 123.19 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b24ff214-6458-46a5-803a-5a8f24361045")
 	)
 	(wire
 		(pts
@@ -3116,6 +3146,16 @@
 	)
 	(wire
 		(pts
+			(xy 128.27 36.83) (xy 128.27 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b5ae0ae3-2439-4592-a8bb-b54b44b9f708")
+	)
+	(wire
+		(pts
 			(xy 24.13 29.21) (xy 24.13 38.1)
 		)
 		(stroke
@@ -3146,6 +3186,16 @@
 	)
 	(wire
 		(pts
+			(xy 123.19 110.49) (xy 181.61 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b849c936-856f-470e-a757-fda899b25b9f")
+	)
+	(wire
+		(pts
 			(xy 204.47 110.49) (xy 227.33 110.49)
 		)
 		(stroke
@@ -3163,16 +3213,6 @@
 			(type default)
 		)
 		(uuid "bb7f17c8-6179-4a04-9e79-2394dfeaa534")
-	)
-	(wire
-		(pts
-			(xy 257.81 36.83) (xy 257.81 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bd583300-5f12-40eb-93e7-206e678a412e")
 	)
 	(wire
 		(pts
@@ -3256,6 +3296,16 @@
 	)
 	(wire
 		(pts
+			(xy 158.75 90.17) (xy 158.75 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d27ffc2c-f954-49c4-9f1a-9e61c2ffe71c")
+	)
+	(wire
+		(pts
 			(xy 62.23 81.28) (xy 62.23 102.87)
 		)
 		(stroke
@@ -3283,6 +3333,16 @@
 			(type default)
 		)
 		(uuid "d8efdabd-b01b-4386-a56c-6b9d3de547dc")
+	)
+	(wire
+		(pts
+			(xy 262.89 46.99) (xy 262.89 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d905db5a-fe4e-416b-ba91-beb498cff867")
 	)
 	(wire
 		(pts
@@ -3326,6 +3386,16 @@
 	)
 	(wire
 		(pts
+			(xy 123.19 68.58) (xy 135.89 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dcb3907b-5a07-4bac-ada9-d39519648a0e")
+	)
+	(wire
+		(pts
 			(xy 227.33 46.99) (xy 227.33 50.8)
 		)
 		(stroke
@@ -3333,16 +3403,6 @@
 			(type default)
 		)
 		(uuid "dd90d53e-6194-4ee3-9a34-2d7c8ed6f5b2")
-	)
-	(wire
-		(pts
-			(xy 260.35 29.21) (xy 260.35 68.58)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ddcb4d26-05ef-4caa-ad6a-e3a10cb0c274")
 	)
 	(wire
 		(pts
@@ -3406,6 +3466,16 @@
 	)
 	(wire
 		(pts
+			(xy 262.89 90.17) (xy 250.19 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ef56032b-ad82-4c4d-8bce-5d31113986e8")
+	)
+	(wire
+		(pts
 			(xy 41.91 50.8) (xy 54.61 50.8)
 		)
 		(stroke
@@ -3443,16 +3513,6 @@
 			(type default)
 		)
 		(uuid "f6d12e21-e968-452e-9e92-b3d3ac678e4c")
-	)
-	(wire
-		(pts
-			(xy 124.46 90.17) (xy 181.61 90.17)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f7422092-100c-43c7-bce5-f6b4cba8c9d0")
 	)
 	(wire
 		(pts
@@ -3716,22 +3776,22 @@
 	)
 	(global_label "LED"
 		(shape input)
-		(at 128.27 36.83 180)
+		(at 257.81 36.83 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
-		(uuid "60a7da57-c34d-4e28-a088-311b83ae32a1")
+		(uuid "542c9f50-2f4b-473c-b89b-9c77031a835c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 121.8377 36.83 0)
+			(at 264.2423 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -4234,7 +4294,7 @@
 			(uuid "6af3b517-bab1-4887-965a-644d8da52ff5")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "D14")
 					(unit 1)
@@ -4244,7 +4304,7 @@
 	)
 	(symbol
 		(lib_id "PCM_marbastlib-mx:MX_SK6812MINI-E")
-		(at 158.75 36.83 0)
+		(at 158.75 36.83 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4253,7 +4313,7 @@
 		(fields_autoplaced yes)
 		(uuid "029fe14b-224b-4e48-9d61-ad310b407437")
 		(property "Reference" "LED2"
-			(at 173.99 30.5114 0)
+			(at 173.99 31.3338 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4261,7 +4321,7 @@
 			)
 		)
 		(property "Value" "MX_SK6812MINI-E"
-			(at 173.99 33.0514 0)
+			(at 173.99 33.8738 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4308,7 +4368,7 @@
 			(uuid "bcd0bff6-c697-4197-b237-be55699a1aa5")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "LED2")
 					(unit 1)
@@ -4318,7 +4378,7 @@
 	)
 	(symbol
 		(lib_id "PCM_marbastlib-mx:MX_SK6812MINI-E")
-		(at 227.33 101.6 180)
+		(at 227.33 101.6 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4327,7 +4387,7 @@
 		(fields_autoplaced yes)
 		(uuid "05ae6e0c-3528-40f6-bbc9-cf9c2d3c17e9")
 		(property "Reference" "LED21"
-			(at 212.09 107.9186 0)
+			(at 242.57 95.2814 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4335,7 +4395,7 @@
 			)
 		)
 		(property "Value" "MX_SK6812MINI-E"
-			(at 212.09 105.3786 0)
+			(at 242.57 97.8214 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4382,7 +4442,7 @@
 			(uuid "47b893ba-0af0-4f49-a248-9c4937231ed8")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "LED21")
 					(unit 1)
@@ -4450,7 +4510,7 @@
 			(uuid "3842e3aa-6455-4b17-a9e4-4be84179f4c2")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "S21")
 					(unit 1)
@@ -4518,7 +4578,7 @@
 			(uuid "6eed0d18-9200-4475-90b4-971f0903ce97")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "S17")
 					(unit 1)
@@ -4586,7 +4646,7 @@
 			(uuid "34f16866-ce0f-4e8c-bbe3-49cad83dd27e")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "S14")
 					(unit 1)
@@ -4654,7 +4714,7 @@
 			(uuid "688e2c9c-1894-4fd5-bdc6-9774cc2ba046")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "S6")
 					(unit 1)
@@ -4722,7 +4782,7 @@
 			(uuid "df26d9ad-2045-4e8d-8f45-7013c53f043b")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "S16")
 					(unit 1)
@@ -4732,7 +4792,7 @@
 	)
 	(symbol
 		(lib_id "PCM_marbastlib-mx:MX_SK6812MINI-E")
-		(at 181.61 58.42 180)
+		(at 181.61 58.42 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4741,7 +4801,7 @@
 		(fields_autoplaced yes)
 		(uuid "1324196c-d798-41b9-b67c-5696ff2fcc50")
 		(property "Reference" "LED9"
-			(at 166.37 64.7386 0)
+			(at 196.85 52.1014 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4749,7 +4809,7 @@
 			)
 		)
 		(property "Value" "MX_SK6812MINI-E"
-			(at 166.37 62.1986 0)
+			(at 196.85 54.6414 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4796,7 +4856,7 @@
 			(uuid "7a3bfe39-2c94-4640-a1e1-c718b556731c")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "LED9")
 					(unit 1)
@@ -4872,7 +4932,7 @@
 			(uuid "98d4dbf1-4f89-491a-ba3d-b51c0b2b2f55")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "J1")
 					(unit 1)
@@ -4882,7 +4942,7 @@
 	)
 	(symbol
 		(lib_id "PCM_marbastlib-mx:MX_SK6812MINI-E")
-		(at 158.75 58.42 180)
+		(at 158.75 58.42 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4891,7 +4951,7 @@
 		(fields_autoplaced yes)
 		(uuid "1a15ebbc-2d84-41ad-a630-39631ad62881")
 		(property "Reference" "LED8"
-			(at 143.51 64.7386 0)
+			(at 173.99 52.1014 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4899,7 +4959,7 @@
 			)
 		)
 		(property "Value" "MX_SK6812MINI-E"
-			(at 143.51 62.1986 0)
+			(at 173.99 54.6414 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4946,7 +5006,7 @@
 			(uuid "7469b67b-dbb2-409f-b069-ecdb082e4bf7")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "LED8")
 					(unit 1)
@@ -5034,7 +5094,7 @@
 			(uuid "99723360-f45a-466b-ade4-563a554af41a")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "D9")
 					(unit 1)
@@ -5122,7 +5182,7 @@
 			(uuid "2376cb97-6c52-4d4b-86ad-c6aa5e66cbe2")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "D5")
 					(unit 1)
@@ -5132,7 +5192,7 @@
 	)
 	(symbol
 		(lib_id "PCM_marbastlib-mx:MX_SK6812MINI-E")
-		(at 135.89 36.83 0)
+		(at 135.89 36.83 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5140,7 +5200,7 @@
 		(dnp no)
 		(uuid "24005863-d1e6-418c-80c8-4afa41bfdd84")
 		(property "Reference" "LED1"
-			(at 151.13 30.5114 0)
+			(at 120.65 43.1486 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5148,7 +5208,7 @@
 			)
 		)
 		(property "Value" "MX_SK6812MINI-E"
-			(at 151.13 33.0514 0)
+			(at 120.65 40.6086 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5195,7 +5255,7 @@
 			(uuid "08397211-850b-4489-b540-f777d288b30e")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "LED1")
 					(unit 1)
@@ -5205,7 +5265,7 @@
 	)
 	(symbol
 		(lib_id "PCM_marbastlib-mx:MX_SK6812MINI-E")
-		(at 135.89 58.42 180)
+		(at 135.89 58.42 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5213,7 +5273,7 @@
 		(dnp no)
 		(uuid "262837e3-9f1c-41f6-b599-37880f54cc06")
 		(property "Reference" "LED7"
-			(at 120.65 64.7386 0)
+			(at 151.13 52.1014 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5221,7 +5281,7 @@
 			)
 		)
 		(property "Value" "MX_SK6812MINI-E"
-			(at 120.65 62.1986 0)
+			(at 151.13 54.6414 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5268,7 +5328,7 @@
 			(uuid "b0dc9ac2-0780-47c7-821e-1394fb3e28da")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "LED7")
 					(unit 1)
@@ -5336,7 +5396,7 @@
 			(uuid "5de77d26-97d5-4536-8b8b-f8e20d768f55")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "S19")
 					(unit 1)
@@ -5346,7 +5406,7 @@
 	)
 	(symbol
 		(lib_id "PCM_marbastlib-mx:MX_SK6812MINI-E")
-		(at 227.33 36.83 0)
+		(at 227.33 36.83 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5355,7 +5415,7 @@
 		(fields_autoplaced yes)
 		(uuid "28850cf3-cd42-4487-80b9-8efd6286ac25")
 		(property "Reference" "LED5"
-			(at 242.57 30.5114 0)
+			(at 242.57 31.3338 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5363,7 +5423,7 @@
 			)
 		)
 		(property "Value" "MX_SK6812MINI-E"
-			(at 242.57 33.0514 0)
+			(at 242.57 33.8738 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5410,7 +5470,7 @@
 			(uuid "6f645034-7254-4c71-89b7-c650928c321a")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "LED5")
 					(unit 1)
@@ -5498,7 +5558,7 @@
 			(uuid "bc29ed26-a3c8-49d4-9c0f-31f2d199152a")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "D1")
 					(unit 1)
@@ -5586,7 +5646,7 @@
 			(uuid "21b83948-b5c7-42b2-a5ce-890f77f380fc")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "D20")
 					(unit 1)
@@ -5674,7 +5734,7 @@
 			(uuid "b2f030ef-7997-4fa0-8275-e1bdfe2702e8")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "D7")
 					(unit 1)
@@ -5742,7 +5802,7 @@
 			(uuid "c4dd8d2d-3efa-4c10-b155-9ddd2d2ed22f")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "SW1")
 					(unit 1)
@@ -5810,7 +5870,7 @@
 			(uuid "57dd5c22-d7f2-408a-ac41-1d1fdf1b3f18")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "S13")
 					(unit 1)
@@ -5898,7 +5958,7 @@
 			(uuid "555561ff-e9f7-4a97-b59f-d710428b6fd8")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "D10")
 					(unit 1)
@@ -5908,7 +5968,7 @@
 	)
 	(symbol
 		(lib_id "PCM_marbastlib-mx:MX_SK6812MINI-E")
-		(at 227.33 58.42 180)
+		(at 227.33 58.42 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5917,7 +5977,7 @@
 		(fields_autoplaced yes)
 		(uuid "40f20b88-1c18-4880-94e2-93502f6c931f")
 		(property "Reference" "LED11"
-			(at 212.09 64.7386 0)
+			(at 242.57 52.1014 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5925,7 +5985,7 @@
 			)
 		)
 		(property "Value" "MX_SK6812MINI-E"
-			(at 212.09 62.1986 0)
+			(at 242.57 54.6414 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5972,7 +6032,7 @@
 			(uuid "d392f44c-3063-4f37-8d8b-3b7f708986ad")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "LED11")
 					(unit 1)
@@ -5982,7 +6042,7 @@
 	)
 	(symbol
 		(lib_id "PCM_marbastlib-mx:MX_SK6812MINI-E")
-		(at 227.33 78.74 0)
+		(at 227.33 78.74 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5991,7 +6051,7 @@
 		(fields_autoplaced yes)
 		(uuid "43e308ed-d241-4568-a463-7464b3c3c57b")
 		(property "Reference" "LED17"
-			(at 242.57 72.4214 0)
+			(at 242.57 73.2438 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5999,7 +6059,7 @@
 			)
 		)
 		(property "Value" "MX_SK6812MINI-E"
-			(at 242.57 74.9614 0)
+			(at 242.57 75.7838 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6046,7 +6106,7 @@
 			(uuid "355d0734-9003-4295-9ee7-41f099d73d28")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "LED17")
 					(unit 1)
@@ -6134,7 +6194,7 @@
 			(uuid "351ae92d-ba06-439a-b2dd-77edc8182322")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "D12")
 					(unit 1)
@@ -6222,7 +6282,7 @@
 			(uuid "046e09ad-5c21-4e94-bdfa-fa747d5ee224")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "D18")
 					(unit 1)
@@ -6290,7 +6350,7 @@
 			(uuid "2dda1b40-c7f6-452b-9604-b7312ad79b90")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "S10")
 					(unit 1)
@@ -6378,7 +6438,7 @@
 			(uuid "1ac0db38-02bd-45cd-90c8-ba31d9cd165f")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "D6")
 					(unit 1)
@@ -6454,7 +6514,7 @@
 			(uuid "85bccc4b-b590-4f56-bd4c-1b229ec15ec7")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "U2")
 					(unit 1)
@@ -6464,7 +6524,7 @@
 	)
 	(symbol
 		(lib_id "PCM_marbastlib-mx:MX_SK6812MINI-E")
-		(at 204.47 78.74 0)
+		(at 204.47 78.74 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6473,7 +6533,7 @@
 		(fields_autoplaced yes)
 		(uuid "550f8347-7c9a-4ff5-acf9-49fb3ba995a9")
 		(property "Reference" "LED16"
-			(at 219.71 72.4214 0)
+			(at 219.71 73.2438 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6481,7 +6541,7 @@
 			)
 		)
 		(property "Value" "MX_SK6812MINI-E"
-			(at 219.71 74.9614 0)
+			(at 219.71 75.7838 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6528,7 +6588,7 @@
 			(uuid "3f31ee00-57af-441c-858a-c039678e4aa5")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "LED16")
 					(unit 1)
@@ -6596,7 +6656,7 @@
 			(uuid "0cf2f385-8b4a-409b-b644-93a72a75991c")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "S11")
 					(unit 1)
@@ -6606,7 +6666,7 @@
 	)
 	(symbol
 		(lib_id "PCM_marbastlib-mx:MX_SK6812MINI-E")
-		(at 250.19 101.6 180)
+		(at 250.19 101.6 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6615,7 +6675,7 @@
 		(fields_autoplaced yes)
 		(uuid "5c7fce6d-ebf7-4b1a-9f14-ef44b6153f30")
 		(property "Reference" "LED22"
-			(at 234.95 107.9186 0)
+			(at 265.43 95.2814 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6623,7 +6683,7 @@
 			)
 		)
 		(property "Value" "MX_SK6812MINI-E"
-			(at 234.95 105.3786 0)
+			(at 265.43 97.8214 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6670,7 +6730,7 @@
 			(uuid "7b4ac7cc-2d3b-4ab2-a088-43970a11abac")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "LED22")
 					(unit 1)
@@ -6758,7 +6818,7 @@
 			(uuid "9ec848d2-34fb-4bb2-9197-c498682f0568")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "D15")
 					(unit 1)
@@ -6846,7 +6906,7 @@
 			(uuid "96609c02-db65-454c-8c6e-a8ff3ccff6ea")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "D21")
 					(unit 1)
@@ -6914,7 +6974,7 @@
 			(uuid "b391ed6e-183b-4868-bc31-dedd0115894b")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "S7")
 					(unit 1)
@@ -6924,7 +6984,7 @@
 	)
 	(symbol
 		(lib_id "PCM_marbastlib-mx:MX_SK6812MINI-E")
-		(at 135.89 78.74 0)
+		(at 135.89 78.74 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6932,7 +6992,7 @@
 		(dnp no)
 		(uuid "674c15d2-c755-4caf-a370-3c357bc4d075")
 		(property "Reference" "LED13"
-			(at 151.13 72.4214 0)
+			(at 120.65 85.0586 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6940,7 +7000,7 @@
 			)
 		)
 		(property "Value" "MX_SK6812MINI-E"
-			(at 151.13 74.9614 0)
+			(at 120.65 82.5186 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6987,76 +7047,9 @@
 			(uuid "581be972-6235-4c4a-b707-3d67067bcd25")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "LED13")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 121.92 46.99 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "67b8795e-bde0-4725-84af-520640132961")
-		(property "Reference" "#PWR06"
-			(at 115.57 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 118.11 46.9899 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 121.92 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 121.92 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 121.92 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "8841eb72-232d-4a73-b181-ec4d28985140")
-		)
-		(instances
-			(project "RootKB"
-				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
-					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -7142,7 +7135,7 @@
 			(uuid "68f56e89-5718-418e-a3d9-f9bdf2f7cc82")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "D22")
 					(unit 1)
@@ -7230,7 +7223,7 @@
 			(uuid "4cef2544-0441-46bf-ac17-b3eb4af7a992")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "D11")
 					(unit 1)
@@ -7318,7 +7311,7 @@
 			(uuid "0ab6feff-087d-4c2a-a80d-fee741b36673")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "D17")
 					(unit 1)
@@ -7385,7 +7378,7 @@
 			(uuid "a2d11aaa-027c-4d2b-b7c0-c39f35c902aa")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "#PWR09")
 					(unit 1)
@@ -7453,7 +7446,7 @@
 			(uuid "c898ec7b-b431-4de0-818c-c025c0665551")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "S20")
 					(unit 1)
@@ -7520,7 +7513,7 @@
 			(uuid "b5b3bce7-e88c-4a5c-847d-b25eebc09ebf")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "#PWR04")
 					(unit 1)
@@ -7530,7 +7523,7 @@
 	)
 	(symbol
 		(lib_id "PCM_marbastlib-mx:MX_SK6812MINI-E")
-		(at 250.19 36.83 0)
+		(at 250.19 36.83 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7539,7 +7532,7 @@
 		(fields_autoplaced yes)
 		(uuid "8488c252-8c81-4c51-931b-3aa9acef59c4")
 		(property "Reference" "LED6"
-			(at 265.43 30.5114 0)
+			(at 265.43 31.3338 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7547,7 +7540,7 @@
 			)
 		)
 		(property "Value" "MX_SK6812MINI-E"
-			(at 265.43 33.0514 0)
+			(at 265.43 33.8738 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7594,7 +7587,7 @@
 			(uuid "19c78a68-a32a-4e8c-8196-a66be10d2fd5")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "LED6")
 					(unit 1)
@@ -7661,7 +7654,7 @@
 			(uuid "4a32c40c-9657-4508-a0c2-10de468e449b")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "#PWR05")
 					(unit 1)
@@ -7729,7 +7722,7 @@
 			(uuid "0f81211f-b60c-446e-893f-041671d457d2")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "S3")
 					(unit 1)
@@ -7739,7 +7732,7 @@
 	)
 	(symbol
 		(lib_id "PCM_marbastlib-mx:MX_SK6812MINI-E")
-		(at 250.19 58.42 180)
+		(at 250.19 58.42 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7748,7 +7741,7 @@
 		(fields_autoplaced yes)
 		(uuid "924f8465-c931-4cdd-a585-389aa25aff29")
 		(property "Reference" "LED12"
-			(at 234.95 64.7386 0)
+			(at 265.43 52.1014 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7756,7 +7749,7 @@
 			)
 		)
 		(property "Value" "MX_SK6812MINI-E"
-			(at 234.95 62.1986 0)
+			(at 265.43 54.6414 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7803,7 +7796,7 @@
 			(uuid "837c13e1-8437-4d88-aa8e-4544a5a379d1")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "LED12")
 					(unit 1)
@@ -7871,7 +7864,7 @@
 			(uuid "9ee5c0e7-e433-4ea0-b371-440a48eedf69")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "S12")
 					(unit 1)
@@ -7939,7 +7932,7 @@
 			(uuid "25314767-ae19-401b-bac0-19c68473bb1a")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "S15")
 					(unit 1)
@@ -8005,7 +7998,7 @@
 			(uuid "d4b531b7-50f0-4358-9b0e-394df20cb4bf")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "#PWR08")
 					(unit 1)
@@ -8093,7 +8086,7 @@
 			(uuid "993cba84-81ff-4c52-bedb-42775eca3527")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "D13")
 					(unit 1)
@@ -8103,7 +8096,7 @@
 	)
 	(symbol
 		(lib_id "PCM_marbastlib-mx:MX_SK6812MINI-E")
-		(at 204.47 58.42 180)
+		(at 204.47 58.42 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8112,7 +8105,7 @@
 		(fields_autoplaced yes)
 		(uuid "9e98c5b2-6cc6-4cd1-b670-2b6a6d7175d5")
 		(property "Reference" "LED10"
-			(at 189.23 64.7386 0)
+			(at 219.71 52.1014 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8120,7 +8113,7 @@
 			)
 		)
 		(property "Value" "MX_SK6812MINI-E"
-			(at 189.23 62.1986 0)
+			(at 219.71 54.6414 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8167,7 +8160,7 @@
 			(uuid "26831977-7fc6-42d0-bbda-bd8ab76ae443")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "LED10")
 					(unit 1)
@@ -8235,76 +8228,9 @@
 			(uuid "b3cbaa6f-ac55-4ea4-9728-19c21b58dc79")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "S8")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:VCC")
-		(at 128.27 29.21 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "9f159061-1045-4a50-b640-e9383acd4d87")
-		(property "Reference" "#PWR07"
-			(at 132.08 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "VCC"
-			(at 124.46 29.2099 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 128.27 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 128.27 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 128.27 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "bae8e630-b2fe-4469-b5c4-86ba427d3696")
-		)
-		(instances
-			(project "RootKB"
-				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
-					(reference "#PWR07")
 					(unit 1)
 				)
 			)
@@ -8436,7 +8362,7 @@
 			(uuid "ab49f848-3b0d-43d9-b43c-7ac1647dff8f")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "U1")
 					(unit 1)
@@ -8504,7 +8430,7 @@
 			(uuid "87f38472-d422-4242-881e-58fe074cbe34")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "S18")
 					(unit 1)
@@ -8514,7 +8440,7 @@
 	)
 	(symbol
 		(lib_id "PCM_marbastlib-mx:MX_SK6812MINI-E")
-		(at 204.47 36.83 0)
+		(at 204.47 36.83 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8523,7 +8449,7 @@
 		(fields_autoplaced yes)
 		(uuid "a6e5bccc-b5f6-45cb-aaf6-91721eb3b66f")
 		(property "Reference" "LED4"
-			(at 219.71 30.5114 0)
+			(at 219.71 31.3338 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8531,7 +8457,7 @@
 			)
 		)
 		(property "Value" "MX_SK6812MINI-E"
-			(at 219.71 33.0514 0)
+			(at 219.71 33.8738 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8578,7 +8504,7 @@
 			(uuid "9efd10a3-8d71-4587-a385-6f8a372eba35")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "LED4")
 					(unit 1)
@@ -8588,7 +8514,7 @@
 	)
 	(symbol
 		(lib_id "PCM_marbastlib-mx:MX_SK6812MINI-E")
-		(at 181.61 36.83 0)
+		(at 181.61 36.83 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8597,7 +8523,7 @@
 		(fields_autoplaced yes)
 		(uuid "a84df225-3050-419a-ae1a-b09c4336629d")
 		(property "Reference" "LED3"
-			(at 196.85 30.5114 0)
+			(at 196.85 31.3338 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8605,7 +8531,7 @@
 			)
 		)
 		(property "Value" "MX_SK6812MINI-E"
-			(at 196.85 33.0514 0)
+			(at 196.85 33.8738 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8652,7 +8578,7 @@
 			(uuid "425996d5-2861-44a2-8c8a-120152c89024")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "LED3")
 					(unit 1)
@@ -8662,7 +8588,7 @@
 	)
 	(symbol
 		(lib_id "PCM_marbastlib-mx:MX_SK6812MINI-E")
-		(at 181.61 101.6 180)
+		(at 181.61 101.6 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8671,7 +8597,7 @@
 		(fields_autoplaced yes)
 		(uuid "ab5c7d12-58d0-4ac9-a63e-7ed65df0bbbf")
 		(property "Reference" "LED19"
-			(at 166.37 107.9186 0)
+			(at 196.85 95.2814 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8679,7 +8605,7 @@
 			)
 		)
 		(property "Value" "MX_SK6812MINI-E"
-			(at 166.37 105.3786 0)
+			(at 196.85 97.8214 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8726,7 +8652,7 @@
 			(uuid "0a00f8d3-6753-44da-9be2-d309d8e13c79")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "LED19")
 					(unit 1)
@@ -8794,7 +8720,7 @@
 			(uuid "22acdc7f-430e-465f-a7d9-a0e394b37f5f")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "S9")
 					(unit 1)
@@ -8861,7 +8787,7 @@
 			(uuid "402e21dc-5ebe-4d72-8448-2fbfe7f79de7")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "#PWR010")
 					(unit 1)
@@ -8871,7 +8797,7 @@
 	)
 	(symbol
 		(lib_id "PCM_marbastlib-mx:MX_SK6812MINI-E")
-		(at 250.19 78.74 0)
+		(at 250.19 78.74 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8880,7 +8806,7 @@
 		(fields_autoplaced yes)
 		(uuid "bc163148-b636-4b26-8ede-c66597022b89")
 		(property "Reference" "LED18"
-			(at 265.43 72.4214 0)
+			(at 265.43 73.2438 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8888,7 +8814,7 @@
 			)
 		)
 		(property "Value" "MX_SK6812MINI-E"
-			(at 265.43 74.9614 0)
+			(at 265.43 75.7838 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8935,7 +8861,7 @@
 			(uuid "f1066949-a44a-4675-a77c-10af6671cd3d")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "LED18")
 					(unit 1)
@@ -9023,7 +8949,7 @@
 			(uuid "2c2ecd22-4ba5-434e-a501-c2a20de813ed")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "D8")
 					(unit 1)
@@ -9091,7 +9017,7 @@
 			(uuid "75f8a7ce-dca1-4d9f-a1f3-b00426f27091")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "S5")
 					(unit 1)
@@ -9159,7 +9085,7 @@
 			(uuid "fdac893e-6ba7-44c9-8c5f-91e5be67eb99")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "S2")
 					(unit 1)
@@ -9169,7 +9095,7 @@
 	)
 	(symbol
 		(lib_id "PCM_marbastlib-mx:MX_SK6812MINI-E")
-		(at 181.61 78.74 0)
+		(at 181.61 78.74 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9178,7 +9104,7 @@
 		(fields_autoplaced yes)
 		(uuid "c420c8bb-e9f8-4185-9d80-6f1d6b601a09")
 		(property "Reference" "LED15"
-			(at 196.85 72.4214 0)
+			(at 196.85 73.2438 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9186,7 +9112,7 @@
 			)
 		)
 		(property "Value" "MX_SK6812MINI-E"
-			(at 196.85 74.9614 0)
+			(at 196.85 75.7838 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9233,7 +9159,7 @@
 			(uuid "26678fd9-0437-4db5-bcef-3cfe324e7e81")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "LED15")
 					(unit 1)
@@ -9243,7 +9169,7 @@
 	)
 	(symbol
 		(lib_id "PCM_marbastlib-mx:MX_SK6812MINI-E")
-		(at 204.47 101.6 180)
+		(at 204.47 101.6 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9252,7 +9178,7 @@
 		(fields_autoplaced yes)
 		(uuid "c8d47df5-1c0e-4e0a-8c5d-40b31d1267ea")
 		(property "Reference" "LED20"
-			(at 189.23 107.9186 0)
+			(at 219.71 95.2814 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9260,7 +9186,7 @@
 			)
 		)
 		(property "Value" "MX_SK6812MINI-E"
-			(at 189.23 105.3786 0)
+			(at 219.71 97.8214 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9307,7 +9233,7 @@
 			(uuid "a7fe59e9-e81c-4f3f-978d-430d77e3ec84")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "LED20")
 					(unit 1)
@@ -9375,7 +9301,7 @@
 			(uuid "69116785-f82b-47d2-974f-2b3d1fe46092")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "S22")
 					(unit 1)
@@ -9440,7 +9366,7 @@
 			(uuid "df4b08c6-9ffa-42e3-90b3-f7b5e5305f8a")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "#PWR03")
 					(unit 1)
@@ -9528,7 +9454,7 @@
 			(uuid "b109bc6a-5770-45cf-92cd-1c467b571414")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "D16")
 					(unit 1)
@@ -9616,7 +9542,7 @@
 			(uuid "1c513507-a4e6-4e22-aa85-9b9f8a885eb6")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "D3")
 					(unit 1)
@@ -9704,7 +9630,7 @@
 			(uuid "25bdd927-02b0-4822-a3e9-f0eb3651b2d8")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "D4")
 					(unit 1)
@@ -9792,7 +9718,7 @@
 			(uuid "8821a18e-dd3e-4077-9255-3d48f7445302")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "D19")
 					(unit 1)
@@ -9859,9 +9785,76 @@
 			(uuid "e9719e13-3541-4431-b18c-5503bbb500c4")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "#PWR02")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VCC")
+		(at 265.43 68.58 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e6a2a742-c0a4-4c2a-8f7d-ae70b486433e")
+		(property "Reference" "#PWR07"
+			(at 261.62 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "VCC"
+			(at 269.24 68.5799 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 265.43 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 265.43 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 265.43 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "23ccf914-8dbf-4536-8919-0801ad9e478b")
+		)
+		(instances
+			(project "RootKB-Left"
+				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)
@@ -9947,7 +9940,7 @@
 			(uuid "6b0b9c7c-68b2-43b4-8eaf-2323a9a08ab4")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "D2")
 					(unit 1)
@@ -10015,7 +10008,7 @@
 			(uuid "6b698723-b865-4886-bc78-64294dae9ceb")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "S1")
 					(unit 1)
@@ -10024,8 +10017,73 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 120.65 68.58 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f80ccb5d-8d2e-4642-9f21-48f28a1450e7")
+		(property "Reference" "#PWR06"
+			(at 114.3 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 115.57 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 120.65 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 120.65 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 120.65 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c1980a33-9704-4311-bb1c-7032d26f0a17")
+		)
+		(instances
+			(project "RootKB-Left"
+				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
+					(reference "#PWR06")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "PCM_marbastlib-mx:MX_SK6812MINI-E")
-		(at 158.75 78.74 0)
+		(at 158.75 78.74 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10034,7 +10092,7 @@
 		(fields_autoplaced yes)
 		(uuid "f87a1417-9f28-4b0e-b548-44a881fa7199")
 		(property "Reference" "LED14"
-			(at 173.99 72.4214 0)
+			(at 173.99 73.2438 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10042,7 +10100,7 @@
 			)
 		)
 		(property "Value" "MX_SK6812MINI-E"
-			(at 173.99 74.9614 0)
+			(at 173.99 75.7838 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10089,7 +10147,7 @@
 			(uuid "63f01a44-8dd5-4a14-b4ea-5d32520f68ef")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "LED14")
 					(unit 1)
@@ -10155,7 +10213,7 @@
 			(uuid "922e6a56-e34f-4ca0-a2cf-4677b81fb039")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "#PWR01")
 					(unit 1)
@@ -10223,7 +10281,7 @@
 			(uuid "b1b5fda7-ec93-4374-b0e2-6711747533fd")
 		)
 		(instances
-			(project "RootKB"
+			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "S4")
 					(unit 1)
