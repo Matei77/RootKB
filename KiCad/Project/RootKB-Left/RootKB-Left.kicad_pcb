@@ -46,10 +46,10 @@
 			(layerselection 0x00010fc_ffffffff)
 			(plot_on_all_layers_selection 0x0000000_00000000)
 			(disableapertmacros no)
-			(usegerberextensions no)
-			(usegerberattributes yes)
-			(usegerberadvancedattributes yes)
-			(creategerberjobfile yes)
+			(usegerberextensions yes)
+			(usegerberattributes no)
+			(usegerberadvancedattributes no)
+			(creategerberjobfile no)
 			(dashed_line_dash_ratio 12.000000)
 			(dashed_line_gap_ratio 3.000000)
 			(svgprecision 4)
@@ -68,16 +68,16 @@
 			(psnegative no)
 			(psa4output no)
 			(plotreference yes)
-			(plotvalue yes)
+			(plotvalue no)
 			(plotfptext yes)
 			(plotinvisibletext no)
 			(sketchpadsonfab no)
-			(subtractmaskfromsilk no)
+			(subtractmaskfromsilk yes)
 			(outputformat 1)
 			(mirror no)
-			(drillshape 1)
+			(drillshape 0)
 			(scaleselection 1)
-			(outputdirectory "")
+			(outputdirectory "export-tests")
 		)
 	)
 	(net 0 "")
@@ -21164,11 +21164,9 @@
 			)
 		)
 		(path "/a05cd160-4e2e-4678-a594-49c72783e345")
-		(sheetname "Root")
-		(sheetfile "RootKB-Left.kicad_sch")
 		(attr through_hole)
 		(fp_line
-			(start 8.89 17.78)
+			(start 8.89 21.88)
 			(end 8.89 -15.24)
 			(stroke
 				(width 0.2)
@@ -21198,8 +21196,8 @@
 			(uuid "d8a1530f-5f82-4aa7-a1d0-c4547d16a627")
 		)
 		(fp_line
-			(start -8.89 17.78)
-			(end 8.89 17.78)
+			(start -8.89 21.88)
+			(end 8.89 21.88)
 			(stroke
 				(width 0.2)
 				(type solid)
@@ -21229,7 +21227,7 @@
 		)
 		(fp_line
 			(start -8.89 -15.24)
-			(end -8.89 17.78)
+			(end -8.89 21.88)
 			(stroke
 				(width 0.2)
 				(type solid)
@@ -21298,7 +21296,7 @@
 			(uuid "83193e8a-8c9c-4d0a-a726-5ae071852bcc")
 		)
 		(fp_line
-			(start 8.89 17.78)
+			(start 8.89 21.88)
 			(end 8.89 -15.24)
 			(stroke
 				(width 0.2)
@@ -21328,8 +21326,8 @@
 			(uuid "80d7d365-356c-48a2-8ac8-b50472fb98f2")
 		)
 		(fp_line
-			(start -8.89 17.78)
-			(end 8.89 17.78)
+			(start -8.89 21.88)
+			(end 8.89 21.88)
 			(stroke
 				(width 0.2)
 				(type solid)
@@ -21359,7 +21357,7 @@
 		)
 		(fp_line
 			(start -8.89 -15.24)
-			(end -8.89 17.78)
+			(end -8.89 21.88)
 			(stroke
 				(width 0.2)
 				(type solid)
@@ -21428,8 +21426,8 @@
 			(uuid "6d9e80a1-db10-40c5-ae43-0ce3b62c0e3f")
 		)
 		(fp_line
-			(start 3.683 19.31)
-			(end -3.683 19.31)
+			(start 4.55 23.18)
+			(end -4.55 23.18)
 			(stroke
 				(width 0.2)
 				(type solid)
@@ -21438,8 +21436,8 @@
 			(uuid "fc633388-427e-4be9-85aa-20eb57145417")
 		)
 		(fp_line
-			(start 3.683 14.23)
-			(end 3.683 19.31)
+			(start 4.55 15.78)
+			(end 4.55 23.18)
 			(stroke
 				(width 0.2)
 				(type solid)
@@ -21448,8 +21446,8 @@
 			(uuid "dd763673-7ba7-4566-aed7-554778c9a59c")
 		)
 		(fp_line
-			(start -3.683 19.31)
-			(end -3.683 14.23)
+			(start -4.55 23.18)
+			(end -4.55 15.78)
 			(stroke
 				(width 0.2)
 				(type solid)
@@ -21458,8 +21456,8 @@
 			(uuid "43b75cf9-72f9-4bc6-b5d2-1a331e3dabd0")
 		)
 		(fp_line
-			(start -3.683 14.23)
-			(end 3.683 14.23)
+			(start -4.55 15.78)
+			(end 4.55 15.78)
 			(stroke
 				(width 0.2)
 				(type solid)
@@ -35667,16 +35665,6 @@
 		(uuid "1c3e0a51-4804-4133-a313-353be87c78f3")
 	)
 	(gr_line
-		(start 211.0545 53.354545)
-		(end 193.2745 53.354545)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "Dwgs.User")
-		(uuid "1db2f69e-6945-4c35-bd67-8480bed0511e")
-	)
-	(gr_line
 		(start 158.017941 131.008564)
 		(end 168.417107 112.247972)
 		(stroke
@@ -35797,16 +35785,6 @@
 		(uuid "46099990-64e7-4542-bfe6-72e7d253ea60")
 	)
 	(gr_line
-		(start 205.8475 52.054545)
-		(end 198.4815 52.054545)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "Dwgs.User")
-		(uuid "46afd3d9-9344-4351-923e-7f65634681f9")
-	)
-	(gr_line
 		(start 152.4 80.9625)
 		(end 152.4 80.9125)
 		(stroke
@@ -35855,16 +35833,6 @@
 		)
 		(layer "Dwgs.User")
 		(uuid "5f742ba4-7237-43c8-98de-27fbe9441e12")
-	)
-	(gr_line
-		(start 193.2745 57.454545)
-		(end 193.2745 53.354545)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "Dwgs.User")
-		(uuid "6048734f-5242-478b-9558-8e6af9a4a104")
 	)
 	(gr_circle
 		(center 209.897357 106.313525)
@@ -36039,16 +36007,6 @@
 		(uuid "90682574-4c9b-41af-95d6-1c3417a87272")
 	)
 	(gr_line
-		(start 205.8475 55.924545)
-		(end 205.8475 52.054545)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "Dwgs.User")
-		(uuid "922bfe4c-d425-4c47-b3cd-e0354c6786c0")
-	)
-	(gr_line
 		(start 171.45 109.4875)
 		(end 190.5 109.4875)
 		(stroke
@@ -36077,16 +36035,6 @@
 		)
 		(layer "Dwgs.User")
 		(uuid "9c4e8bf2-8bbb-4131-b467-6aa354d620b6")
-	)
-	(gr_line
-		(start 211.0545 57.454545)
-		(end 211.0545 53.354545)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "Dwgs.User")
-		(uuid "9ee63bbd-60ed-4b1f-924f-9b0f770e7338")
 	)
 	(gr_line
 		(start 152.4 66.675)
@@ -36367,16 +36315,6 @@
 		)
 		(layer "Dwgs.User")
 		(uuid "fd8ea4f4-2084-4cdb-b850-7579fa3fc54e")
-	)
-	(gr_line
-		(start 198.4815 55.924545)
-		(end 198.4815 52.054545)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "Dwgs.User")
-		(uuid "fee10547-2af2-464c-bca3-331a080867b2")
 	)
 	(gr_line
 		(start 190.5 71.4375)
@@ -43740,14 +43678,7 @@
 	)
 	(group ""
 		(uuid "7484364a-7414-4d7a-9bec-ae513765578d")
-		(members "570610eb-6886-4a19-860b-f766abbdb514" "df697c82-e79a-4473-a4e2-53a8495f223d")
-	)
-	(group ""
-		(uuid "df697c82-e79a-4473-a4e2-53a8495f223d")
-		(members "1db2f69e-6945-4c35-bd67-8480bed0511e" "46afd3d9-9344-4351-923e-7f65634681f9"
-			"6048734f-5242-478b-9558-8e6af9a4a104" "922bfe4c-d425-4c47-b3cd-e0354c6786c0"
-			"9ee63bbd-60ed-4b1f-924f-9b0f770e7338" "fee10547-2af2-464c-bca3-331a080867b2"
-		)
+		(members "570610eb-6886-4a19-860b-f766abbdb514")
 	)
 	(group ""
 		(uuid "e2cd28ee-6d45-4102-9db7-3a7fe5e2b4b7")
