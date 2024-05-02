@@ -1077,151 +1077,6 @@
 				)
 			)
 		)
-		(symbol "ScottoKeebs:Placeholder_Switch"
-			(pin_numbers hide)
-			(pin_names
-				(offset 1.016) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "SW"
-				(at 1.27 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "Switch"
-				(at 0 -1.524 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Push button switch, generic, two pins"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "switch normally-open pushbutton push-button"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Placeholder_Switch_0_1"
-				(circle
-					(center -2.032 0)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 1.27) (xy 0 3.048)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 1.27) (xy -2.54 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.032 0)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 0 180)
-					(length 2.54)
-					(name "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "ScottoKeebs:Placeholder_TRRS"
 			(pin_names
 				(offset 1.016)
@@ -3622,7 +3477,7 @@
 	)
 	(global_label "TRRS_SERIAL"
 		(shape input)
-		(at 107.95 167.64 180)
+		(at 107.95 172.72 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3632,7 +3487,7 @@
 		)
 		(uuid "10369338-ac6e-4320-baa5-a9fc01496148")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 96.8006 167.64 0)
+			(at 96.8006 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3796,28 +3651,6 @@
 			)
 		)
 	)
-	(global_label "RST"
-		(shape input)
-		(at 109.22 187.96 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "4f6060fd-0943-40b5-bff6-c004e519085b")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 102.7877 187.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "LED"
 		(shape input)
 		(at 257.81 36.83 0)
@@ -3831,28 +3664,6 @@
 		(uuid "542c9f50-2f4b-473c-b89b-9c77031a835c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 264.2423 36.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "RST"
-		(shape input)
-		(at 64.77 153.67 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "67cc00d8-7edc-4313-b45f-67baf4693443")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 71.2023 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4018,7 +3829,7 @@
 	)
 	(global_label "SCL"
 		(shape input)
-		(at 106.68 139.7 180)
+		(at 106.68 144.78 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4028,7 +3839,7 @@
 		)
 		(uuid "abeb1b6d-f5a9-482a-b8cf-c89e2996ff4d")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 100.1872 139.7 0)
+			(at 100.1872 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4194,7 +4005,7 @@
 	)
 	(global_label "SDA"
 		(shape input)
-		(at 106.68 137.16 180)
+		(at 106.68 142.24 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4204,7 +4015,7 @@
 		)
 		(uuid "febc2bee-1c8e-4fbb-8f64-b23c63ec6917")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 100.1267 137.16 0)
+			(at 100.1267 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4866,7 +4677,7 @@
 	)
 	(symbol
 		(lib_id "display:OLED-128x32")
-		(at 109.22 140.97 0)
+		(at 109.22 146.05 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4875,7 +4686,7 @@
 		(fields_autoplaced yes)
 		(uuid "178d46a7-dd6a-4ade-89f0-55f536626ab3")
 		(property "Reference" "J1"
-			(at 125.73 139.6999 0)
+			(at 125.73 144.7799 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4884,7 +4695,7 @@
 			)
 		)
 		(property "Value" "OLED-128x32"
-			(at 125.73 142.2399 0)
+			(at 125.73 147.3199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4893,7 +4704,7 @@
 			)
 		)
 		(property "Footprint" "display:OLED-128x32-cutout"
-			(at 109.22 132.08 0)
+			(at 109.22 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4902,7 +4713,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 109.22 139.7 0)
+			(at 109.22 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4911,7 +4722,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 109.22 140.97 0)
+			(at 109.22 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5743,74 +5554,6 @@
 		)
 	)
 	(symbol
-		(lib_id "ScottoKeebs:Placeholder_Switch")
-		(at 114.3 187.96 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "37af0efc-dfba-4ec3-b453-eb543a63d653")
-		(property "Reference" "SW1"
-			(at 114.3 180.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Switch"
-			(at 114.3 182.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "ScottoKeebs_Components:Button_MJTP1250"
-			(at 114.3 182.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 114.3 182.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 114.3 187.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "2ee8b705-86dc-4fbe-9b43-fc67cb1ecc45")
-		)
-		(pin "2"
-			(uuid "c4dd8d2d-3efa-4c10-b155-9ddd2d2ed22f")
-		)
-		(instances
-			(project "RootKB-Left"
-				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
-					(reference "SW1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "ScottoKeebs:Placeholder_Keyswitch")
 		(at 26.67 83.82 0)
 		(unit 1)
@@ -6448,7 +6191,7 @@
 	)
 	(symbol
 		(lib_id "ScottoKeebs:Placeholder_TRRS")
-		(at 116.84 172.72 0)
+		(at 116.84 177.8 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6457,7 +6200,7 @@
 		(fields_autoplaced yes)
 		(uuid "4d0b8f06-3a3d-49ec-9746-406f1c12597a")
 		(property "Reference" "U2"
-			(at 123.19 165.0999 0)
+			(at 123.19 170.1799 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -6466,7 +6209,7 @@
 			)
 		)
 		(property "Value" "TRRS"
-			(at 123.19 167.6399 0)
+			(at 123.19 172.7199 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -6475,7 +6218,7 @@
 			)
 		)
 		(property "Footprint" "ScottoKeebs_Components:TRRS_PJ-320A"
-			(at 120.65 172.72 0)
+			(at 120.65 177.8 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -6484,7 +6227,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 120.65 172.72 0)
+			(at 120.65 177.8 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -6493,7 +6236,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 116.84 172.72 0)
+			(at 116.84 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7321,7 +7064,7 @@
 	)
 	(symbol
 		(lib_id "power:VCC")
-		(at 106.68 142.24 90)
+		(at 106.68 147.32 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7330,7 +7073,7 @@
 		(fields_autoplaced yes)
 		(uuid "70066043-2cf3-441a-95bd-72d8211813af")
 		(property "Reference" "#PWR09"
-			(at 110.49 142.24 0)
+			(at 110.49 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7339,7 +7082,7 @@
 			)
 		)
 		(property "Value" "VCC"
-			(at 102.87 142.2399 90)
+			(at 102.87 147.3199 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7348,7 +7091,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 106.68 142.24 0)
+			(at 106.68 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7357,7 +7100,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 106.68 142.24 0)
+			(at 106.68 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7366,7 +7109,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 106.68 142.24 0)
+			(at 106.68 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7942,7 +7685,7 @@
 	)
 	(symbol
 		(lib_id "power:VCC")
-		(at 107.95 162.56 0)
+		(at 107.95 167.64 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7951,7 +7694,7 @@
 		(fields_autoplaced yes)
 		(uuid "98e62f4d-497c-40d0-9a5d-11dc619a6b5e")
 		(property "Reference" "#PWR08"
-			(at 107.95 166.37 0)
+			(at 107.95 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7960,7 +7703,7 @@
 			)
 		)
 		(property "Value" "VCC"
-			(at 107.95 157.48 0)
+			(at 107.95 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7968,7 +7711,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 107.95 162.56 0)
+			(at 107.95 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7977,7 +7720,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 107.95 162.56 0)
+			(at 107.95 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7986,7 +7729,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 107.95 162.56 0)
+			(at 107.95 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9311,7 +9054,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 106.68 144.78 0)
+		(at 106.68 149.86 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9319,7 +9062,7 @@
 		(dnp no)
 		(uuid "d2634b26-d446-40c6-b43b-fcfbbe8f723c")
 		(property "Reference" "#PWR03"
-			(at 106.68 151.13 0)
+			(at 106.68 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9328,7 +9071,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 106.68 149.86 0)
+			(at 106.68 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9336,7 +9079,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 106.68 144.78 0)
+			(at 106.68 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9345,7 +9088,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 106.68 144.78 0)
+			(at 106.68 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9354,7 +9097,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 106.68 144.78 0)
+			(at 106.68 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9728,7 +9471,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 107.95 165.1 270)
+		(at 107.95 170.18 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9737,7 +9480,7 @@
 		(fields_autoplaced yes)
 		(uuid "e52cbef3-71df-4b58-9bc8-2f0bf747c54c")
 		(property "Reference" "#PWR02"
-			(at 101.6 165.1 0)
+			(at 101.6 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9746,7 +9489,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 104.14 165.0999 90)
+			(at 104.14 170.1799 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9755,7 +9498,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 107.95 165.1 0)
+			(at 107.95 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9764,7 +9507,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 107.95 165.1 0)
+			(at 107.95 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9773,7 +9516,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 107.95 165.1 0)
+			(at 107.95 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10150,72 +9893,6 @@
 			(project "RootKB-Left"
 				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
 					(reference "LED14")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 119.38 187.96 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "fd674926-7748-4528-8362-38fa5943091b")
-		(property "Reference" "#PWR01"
-			(at 119.38 194.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 119.38 193.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 119.38 187.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 119.38 187.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 119.38 187.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "922e6a56-e34f-4ca0-a2cf-4677b81fb039")
-		)
-		(instances
-			(project "RootKB-Left"
-				(path "/dddd40b1-2d0c-4832-89d2-bce6fcad395f"
-					(reference "#PWR01")
 					(unit 1)
 				)
 			)
