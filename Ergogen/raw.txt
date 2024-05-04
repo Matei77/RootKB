@@ -44,3 +44,12 @@ points:
       rows:
         thumb:
         thumb_extra:
+
+
+outlines:
+  keys:
+    - what: rectangle
+      where: true
+      operation: stack
+      size: [U, U]
+    
