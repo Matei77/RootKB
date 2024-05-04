@@ -1,0 +1,13 @@
+https://github.com/joe-scotto/scottokeebs/tree/main/Extras/ScottoKicad
+
+https://github.com/kiswitch/kiswitch/tree/main
+
+https://github.com/g200kg/kicad-lib-arduino
+
+https://github.com/ebastler/marbastlib
+
+https://github.com/crides/kleeb
+
+https://github.com/keebio/Keebio-Parts.pretty
+
+https://github.com/keebio/keebio-components
