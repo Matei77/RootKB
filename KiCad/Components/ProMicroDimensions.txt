@@ -1,0 +1,8 @@
+Pulsivo Type-C Arduino ProMicro Dimensions:
+
+long side: 37.1mm
+long side including Type-C port: 38.4mm
+short side: 18.3mm
+
+Type-C port short side: 7.4mm
+Type-C port long side: 9.1mm
