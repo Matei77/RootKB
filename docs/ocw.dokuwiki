@@ -1,0 +1,70 @@
+====== RootKB ======
+<note tip>
+Name: Matei-Ștefan Ionescu\\
+Group: 333CA
+</note>
+===== Introduction =====
+
+RootKB is a 44 key split mechanical keyboard, featuring hot-swappable switches, a columnar layout with an ergonomically placed 4 key thumb cluster, per-key RGB lighting and an OLED screen on each side.
+
+As a computer science student, I am spending a big part of my day typing on my keyboard. So, I was always interested in how I could make this activity more enjoyable and efficient. I started researching keyboard ergonomics and I found that there are many problems with regular keyboards.
+
+Firstly, we are using the same layout designed in the early 1870s for typewriters. At that time, having staggered rows allowed the typebars to align more efficiently, reducing the likelihood of jams. Now, since computer keyboards don't suffer from the same issue, having staggered rows is just inefficient since it requires your fingers to travel in an unnatural and uneven way. In order to fix this, I am using a column staggered design for my keyboard. This way the fingers will rest in a more natural position and travel less, while keeping an even travel distance between the fingers of my left hand and right hand.
+
+{{ :pm:prj2024:ccontasel:matei.ionescu0703:remington_2_typewriter_keyboard-1878.jpg?300 |Remington 2 Typewriter, 1878}}
+{{ :pm:prj2024:ccontasel:matei.ionescu0703:stagger.jpg?500 |}}\\
+
+
+A second problem with standard keyboards is the fact that your hands are placed too close together on the keyboard. This puts your wrists in an unnatural position, potentially leading to discomfort or repetitive strain injuries like carpal tunnel syndrome. This issue is fixed by splitting the keyboard, allowing each half to be placed in a more natural position for your hands.
+
+{{ :pm:prj2024:ccontasel:matei.ionescu0703:split.jpg?500 |}}\\
+
+The third problem is that your strongest fingers, the thumbs are only used to press one key, the space bar. To make my keyboard more efficient and comfortable I will be using a 4 key thumb cluster for each side. So, the thumbs will be pressing 8 keys instead of 1.
+
+{{ :pm:prj2024:ccontasel:matei.ionescu0703:thumb-cluster.jpg?400 | Thumb cluster on the ZSA Moonlander keyboard}}\\
+
+A fourth inefficiency that arises from the regular keyboard design is stretching our fingers a long way in order to press certain keys. To fix this, we will use 6 columns and 3 rows aside from the thumb cluster, so our fingers will easily reach each key. At this point you might be wondering where the functions and numbers rows will go, and how you will be able to access special characters. The answer is layers. You might not know it, but you are already familiar with layers. Every time you use the Shift key you are changing the layer of your keyboard to access different symbols, like uppercase characters. There will be buttons in the thumb clusters that when held down will change the layer of the keyboard. So, you will be able to access all the characters you need by holding down one of these buttons.
+
+Discovering all these problems with standard keyboards and inspired by other open-source projects like the Corne, Lily58 and Piantor, my goal is to design and build my own ergonomic keyboard.
+
+Aside from the ergonomic design, the keyboard will feature per-key RGB lighting, allowing users to choose their favorite colors. Additionally, because the switch type preferences differ from person to person, the keyboard is hot-swappable, allowing users to use their favorite switches for the best typing experience. An OLED screen will also be placed on each side of the board, allowing users to display an image or info about the board, like the RGB profile used and the current board layer.
+
+===== General Description =====
+
+Each half of the board will have its own Arduino ProMicro. One of them will be the master communicating with the PC using the USB standard. The firmware for communication will be implemented using the LUFA library. The two Arduino microcontrollers will communicate with each other using UART, through a TRRS cable, sharing a common VCC and GND. Each microcontroller will connect to its own display module through an I2C connection. A switch matrix with 6 columns and 4 rows will be created. Each switch will have its own diode in order to prevent ghosting and allow NKRO (N-Key Rollover). Each column and each row will be connected to the microcontroller. The matrix will be scanned by sending a signal through one column at a time and checking the signal on the rows. If we got the signal on a row that means that the key where that row and column intersects was pressed.
+
+{{ :pm:prj2024:ccontasel:matei.ionescu0703:block-diagram.png?800 |}}\\
+
+===== Hardware Design =====
+
+The following components are required to build the keyboard:
+  * 2x Custom PCBs
+  * 2x 3D Printed Cases
+  * 2x Arduino ProMicro (Type-C)
+  * 2x OLED Display Module 0.91" 128x32
+  * 2x PJ-320A TRRS Socket
+  * 44x Kailh MX Hot-swap Sockets
+  * 44x SK6812 MINI-E RGB LED Modules
+  * 44x 1N4148W SMD Diodes
+  * 4x 12-pin sockets for microcontrollers
+  * 2x 4-pin sockets for OLED Modules
+  * 2x Acrylic Display Covers
+  * 16x M2 Standoffs
+  * 32x M2 Screws
+  * 44x MX Switches
+  * 1x Keycaps Set
+  * 1x TRRS Cable
+  * 1x USB Type-C Cable
+
+I started designing the layout by removing keycaps from some of my keyboards and placing them in the positions I wanted. Early versions looked like this:
+
+{{ :pm:prj2024:ccontasel:matei.ionescu0703:layout-trail-1.jpeg?300 |}}
+{{ :pm:prj2024:ccontasel:matei.ionescu0703:layout-trail-2.jpeg?300 |}}\\
+
+After some trial-and-error arranging the keys, I settled with the following layout that I found very comfortable:
+{{ :pm:prj2024:ccontasel:matei.ionescu0703:final-keys-layout.jpeg?300 |}}\\
+
+The next step was to recreate it on the computer to have a reference for creating the PCB and case. I chose to use Ergogen for this task. Ergogen is an open-source project aiming to provide a common configuration format to describe ergonomic 2D layouts. I measured the dimensions of my keycaps and the angle of my thumb cluster and ended up with the following design:
+
+{{ :pm:prj2024:ccontasel:matei.ionescu0703:measuring-layout.jpeg?300 |}}
+{{ :pm:prj2024:ccontasel:matei.ionescu0703:ergogen-layout.png?300 |}}\\
