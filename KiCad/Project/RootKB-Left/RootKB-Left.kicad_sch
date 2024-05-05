@@ -3409,6 +3409,25 @@
 		)
 		(uuid "fcd4f533-f38b-496b-924c-ab39d677bbc3")
 	)
+	(text_box "Left Side: TX - Ring 1\n           RX - Ring 2\n\nRight Side: RX - Ring 1\n            TX - Ring 2"
+		(exclude_from_sim no)
+		(at 101.6 180.34 0)
+		(size 27.94 12.7)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "4274d9db-a7eb-4a0d-96c5-1fe6dfd5f80a")
+	)
 	(global_label "Column 5"
 		(shape input)
 		(at 87.63 29.21 90)
@@ -3427,6 +3446,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "TRRS_RX"
+		(shape input)
+		(at 34.29 151.13 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "09e6e034-a806-49e1-a1c2-9cb9b2d4834d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 23.1406 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -3475,7 +3516,7 @@
 			)
 		)
 	)
-	(global_label "TRRS_SERIAL"
+	(global_label "TRRS_RX"
 		(shape input)
 		(at 107.95 172.72 180)
 		(fields_autoplaced yes)
@@ -3515,6 +3556,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "TRRS_TX"
+		(shape input)
+		(at 107.95 170.18 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "205f0d33-47e0-4274-84f8-40424618f530")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 97.103 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -3673,6 +3736,28 @@
 			)
 		)
 	)
+	(global_label "TRRS_TX"
+		(shape input)
+		(at 34.29 148.59 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6ff6128c-9f9c-428b-b4b5-2b76b8f05360")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 23.443 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "Column 4"
 		(shape input)
 		(at 74.93 29.21 90)
@@ -3779,28 +3864,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "TRRS_SERIAL"
-		(shape input)
-		(at 34.29 151.13 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "a167a0a2-9a55-4a9e-9528-0b6778ff3050")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 23.1406 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 				(hide yes)
 			)
 		)
@@ -9471,7 +9534,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 107.95 170.18 270)
+		(at 107.95 175.26 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9480,7 +9543,7 @@
 		(fields_autoplaced yes)
 		(uuid "e52cbef3-71df-4b58-9bc8-2f0bf747c54c")
 		(property "Reference" "#PWR02"
-			(at 101.6 170.18 0)
+			(at 107.95 181.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9489,16 +9552,16 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 104.14 170.1799 90)
+			(at 110.49 176.5299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
-			(at 107.95 170.18 0)
+			(at 107.95 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9507,7 +9570,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 107.95 170.18 0)
+			(at 107.95 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9516,7 +9579,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 107.95 170.18 0)
+			(at 107.95 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
