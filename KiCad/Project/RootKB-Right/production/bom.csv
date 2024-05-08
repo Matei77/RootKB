@@ -1,0 +1,7 @@
+﻿Designator,Footprint,Quantity,Value,LCSC Part #
+"D1, D10, D11, D12, D13, D14, D15, D16, D17, D18, D19, D2, D20, D21, D22, D3, D4, D5, D6, D7, D8, D9",D_SOD-123F,22,Diode,
+"LED1, LED10, LED11, LED12, LED13, LED14, LED15, LED16, LED17, LED18, LED19, LED2, LED20, LED21, LED22, LED3, LED4, LED5, LED6, LED7, LED8, LED9",LED_MX_6028R,22,MX_SK6812MINI-E,
+"S1, S10, S11, S12, S13, S14, S15, S16, S17, S18, S19, S2, S22, S3, S4, S5, S6, S7, S8, S9",SW_Hotswap_Kailh_MX_1.00u,20,Keyswitch,
+"S20, S21",SW_Hotswap_Kailh_MX_1.25u_90deg,2,Keyswitch,
+U1,Arduino_Pro_Micro,1,Arduino_Pro_Micro,
+U2,TRRS_PJ-320A,1,TRRS,
