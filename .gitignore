@@ -1,15 +1,12 @@
-KiCad/Components/Keebio-Components
-KiCad/Components/Keebio-Footprints
-KiCad/Components/kicad-lib-arduino
-KiCad/Components/kleeb
-KiCad/Components/ScottoKicad
-KiCad/Components/ScottoKicad.zip
-KiCad/Project/RootKB/RootKB-backups
-KiCad/Project/RootKB/fp-info-cache
-KiCad/Project/RootKB-Left/export-tests
-KiCad/Project/RootKB-Left/RootKB-Left-backups
-KiCad/Project/RootKB-Left/RootKB-backups
-KiCad/Project/RootKB-Left/fp-info-cache
-KiCad/Project/RootKB-Right/RootKB-Right-backups
-KiCad/Project/RootKB-Right/fp-info-cache
-
+PCB/KiCad Project/Components/Keebio-Components
+PCB/KiCad Components/Keebio-Footprints
+PCB/KiCad Components/kicad-lib-arduino
+PCB/KiCad Components/kleeb
+PCB/KiCad Components/ScottoKicad
+PCB/KiCad Components/ScottoKicad.zip
+PCB/KiCad Project/RootKB-Left/export-tests
+PCB/KiCad Project/RootKB-Left/RootKB-Left-backups
+PCB/KiCad Project/RootKB-Left/RootKB-backups
+PCB/KiCad Project/RootKB-Left/fp-info-cache
+PCB/KiCad Project/RootKB-Right/RootKB-Right-backups
+PCB/KiCad Project/RootKB-Right/fp-info-cache
