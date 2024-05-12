@@ -521,7 +521,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "export-tests",
+      "plot": "exports",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "",

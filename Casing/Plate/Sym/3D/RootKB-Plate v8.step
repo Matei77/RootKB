@@ -9,8 +9,8 @@ FILE_DESCRIPTION(
 /* implementation_level */ '2;1');
 
 FILE_NAME(
-/* name */ 'RootKB-Plate v7.step',
-/* time_stamp */ '2024-05-10T00:14:13+03:00',
+/* name */ 'RootKB-Plate v8.step',
+/* time_stamp */ '2024-05-11T17:22:06+03:00',
 /* author */ (''),
 /* organization */ (''),
 /* preprocessor_version */ 'ST-DEVELOPER v20',
@@ -4373,16 +4373,16 @@ SOLID_ANGLE_UNIT()
 #4303=PRODUCT_DEFINITION_SHAPE('',$,#4306);
 #4304=SHAPE_REPRESENTATION('',(#2710),#4296);
 #4305=PRODUCT_DEFINITION_CONTEXT('part definition',#4310,'design');
-#4306=PRODUCT_DEFINITION('RootKB-Plate','RootKB-Plate v6',#4307,#4305);
+#4306=PRODUCT_DEFINITION('RootKB-Plate','RootKB-Plate v8',#4307,#4305);
 #4307=PRODUCT_DEFINITION_FORMATION('',$,#4312);
-#4308=PRODUCT_RELATED_PRODUCT_CATEGORY('RootKB-Plate v6',
-'RootKB-Plate v6',(#4312));
+#4308=PRODUCT_RELATED_PRODUCT_CATEGORY('RootKB-Plate v8',
+'RootKB-Plate v8',(#4312));
 #4309=APPLICATION_PROTOCOL_DEFINITION('international standard',
 'automotive_design',2009,#4310);
 #4310=APPLICATION_CONTEXT(
 'Core Data for Automotive Mechanical Design Process');
 #4311=PRODUCT_CONTEXT('part definition',#4310,'mechanical');
-#4312=PRODUCT('RootKB-Plate','RootKB-Plate v6',$,(#4311));
+#4312=PRODUCT('RootKB-Plate','RootKB-Plate v8',$,(#4311));
 #4313=PRESENTATION_STYLE_ASSIGNMENT((#4315));
 #4314=PRESENTATION_STYLE_ASSIGNMENT((#4316));
 #4315=SURFACE_STYLE_USAGE(.BOTH.,#4317);
