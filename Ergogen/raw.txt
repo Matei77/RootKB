@@ -8,6 +8,7 @@ points:
   key.height: key_size
   key.width: key_size
   key.spread: spacing
+  key.padding: spacing
   zones:
     matrix:
       key:
@@ -52,4 +53,10 @@ outlines:
       where: true
       operation: stack
       size: [U, U]
+
+  plate:
+    - what: rectangle
+      where: true
+      operation: stack
+      size: [14, 14]
     
