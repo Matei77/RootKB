@@ -67,7 +67,7 @@ namespace matrix {
             Serial1.write((byte *)&matrix, sizeof(matrix));
         }
 
-        delay(50);
+        delay(20);
     }
 
 } // namespace keys
