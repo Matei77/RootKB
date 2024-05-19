@@ -28,14 +28,9 @@ void loop() {
     if (Serial.read() == 'p') {
         Serial.println("matrix all:");
         matrix::print_matrix(matrix::matrix_all);
-        Serial.println("keys mask:");
-        matrix::print_matrix(keys::keys_mask);
-        Serial.println("F bit:");
-        uint64_t fbit = matrix::get_matrix_bit_global(keys::keys_mask, 2, 4);
-        matrix::print_matrix(fbit);
     }
 
-    if (matrix::get_matrix_key_global(matrix::matrix_all, 3, 4) == 1) {
+    if (matrix::get_matrix_key_global(matrix::matrix_all, 0, 0) == 1) {
         send_keys = 0;
         Serial.println("Send keys off");
     }

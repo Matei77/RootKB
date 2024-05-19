@@ -54,7 +54,6 @@ namespace matrix {
         get_matrix_right();
 
         matrix_all = matrix_left | matrix_right;
-        // matrix_all = matrix_right;
     }
 
     void print_matrix(uint64_t matrix) {
