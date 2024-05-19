@@ -1,12 +1,7 @@
-#include <Arduino.h>
-#include <Keyboard.h>
-#include <Wire.h>
-#include <FastLED.h>
-#include <Adafruit_GFX.h>
-#include <Adafruit_SSD1306.h>
-
 #include "matrix.h"
 #include "keys.h"
+#include "rgb.h"
+#include "oled.h"
 
 // RootKB Left
 
@@ -18,6 +13,8 @@ void setup() {
     
     matrix::init_matrix_pins();
     keys::init_keys();
+    rgb::init_rgb();
+    oled::init_oled();
 
     delay(1000);
 }

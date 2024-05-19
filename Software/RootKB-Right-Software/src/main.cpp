@@ -1,12 +1,6 @@
-#include <Arduino.h>
-#include <Keyboard.h>
-#include <Wire.h>
-#include <FastLED.h>
-#include <Adafruit_GFX.h>
-#include <Adafruit_SSD1306.h>
-
 #include "matrix.h"
-#include "config.h"
+#include "rgb.h"
+#include "oled.h"
 
 // RootKB Right
 
@@ -15,6 +9,8 @@ void setup() {
     Serial1.begin(115200);
 
     matrix::init_matrix_pins();
+    rgb::init_rgb();
+    oled::init_oled();
 
     delay(1000);
 }

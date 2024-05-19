@@ -1,6 +1,7 @@
 #pragma once
 
 #include <stdint.h>
+#include <Arduino.h>
 
 constexpr uint8_t MATRIX_ROWS = 4;
 constexpr uint8_t MATRIX_COLS = 6;

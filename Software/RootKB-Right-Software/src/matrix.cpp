@@ -1,5 +1,4 @@
 #include "matrix.h"
-#include "config.h"
 
 namespace matrix {
     matrix_t matrix;
