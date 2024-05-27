@@ -15,4 +15,5 @@ namespace rgb {
     void saturation_up();
     void saturation_down();
     void send_rgb_info();
+    void display_rgb_info();
 }

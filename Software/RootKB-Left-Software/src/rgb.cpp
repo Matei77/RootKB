@@ -1,5 +1,6 @@
 #include <FastLED.h>
 #include "rgb.h"
+#include "oled.h"
 
 namespace rgb {
     uint8_t brightness = 250;
@@ -24,9 +25,8 @@ namespace rgb {
         } else {
             hue = hue + 10;
 
-            Serial.print("hue: ");
-            Serial.println(hue);
             send_rgb_info();
+            display_rgb_info();
 
             for (uint8_t led_index = 0; led_index < NUM_LEDS; ++led_index) {
                 leds[led_index] = CHSV(hue, saturation, brightness);
@@ -42,9 +42,8 @@ namespace rgb {
         } else {
             hue = hue - 10;
 
-            Serial.print("hue: ");
-            Serial.println(hue);
             send_rgb_info();
+            display_rgb_info();
 
             for (uint8_t led_index = 0; led_index < NUM_LEDS; ++led_index) {
                 leds[led_index] = CHSV(hue, saturation, brightness);
@@ -60,9 +59,8 @@ namespace rgb {
         } else {
             brightness = brightness + 25;
 
-            Serial.print("brightness: ");
-            Serial.println(brightness);
             send_rgb_info();
+            display_rgb_info();
 
             for (uint8_t led_index = 0; led_index < NUM_LEDS; ++led_index) {
                 leds[led_index] = CHSV(hue, saturation, brightness);
@@ -78,9 +76,8 @@ namespace rgb {
         } else {
             brightness = brightness - 25;
 
-            Serial.print("brightness: ");
-            Serial.println(brightness);
             send_rgb_info();
+            display_rgb_info();
 
             for (uint8_t led_index = 0; led_index < NUM_LEDS; ++led_index) {
                 leds[led_index] = CHSV(hue, saturation, brightness);
@@ -96,9 +93,8 @@ namespace rgb {
         } else {
             saturation = saturation + 25;
         
-            Serial.print("saturation: ");
-            Serial.println(saturation);
             send_rgb_info();
+            display_rgb_info();
 
             for (uint8_t led_index = 0; led_index < NUM_LEDS; ++led_index) {
                 leds[led_index] = CHSV(hue, saturation, brightness);
@@ -114,14 +110,15 @@ namespace rgb {
         } else {
             saturation = saturation - 25;
 
+            send_rgb_info();
+            display_rgb_info();
+            
             for (uint8_t led_index = 0; led_index < NUM_LEDS; ++led_index) {
                 leds[led_index] = CHSV(hue, saturation, brightness);
             }
 
             FastLED.show();
-            Serial.print("saturation: ");
-            Serial.println(saturation);
-            send_rgb_info();
+
         }
     }
 
@@ -130,5 +127,9 @@ namespace rgb {
         if (Serial1.availableForWrite() >= 3) {
             Serial1.write(rgb_info, 3);
         }
+    }
+
+    void display_rgb_info() {
+        oled::show_brightness_and_color(brightness, hue);
     }
 }

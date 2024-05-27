@@ -35,4 +35,6 @@ void loop() {
     if (send_keys == 1) {
         keys::send_keys();
     }
+
+    oled::display_logo();
 }
