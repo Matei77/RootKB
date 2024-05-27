@@ -89,7 +89,20 @@ namespace keys {
         K_RIGHT = 215,
         K_LEFT,
         K_DOWN,
-        K_UP
+        K_UP,
+        K_PRT_SC = 206,
+        K_F1 = 194,
+        K_F2,
+        K_F3,
+        K_F4,
+        K_F5,
+        K_F6,
+        K_F7,
+        K_F8,
+        K_F9,
+        K_F10,
+        K_F11,
+        K_F12
     };
 
     const raw_keycode_t layouts[LAYOUTS_NUM][MATRIX_ROWS][MATRIX_COLS_BOTH] = {
@@ -115,9 +128,9 @@ namespace keys {
         },
 
         {
-            {K_NO, K_NO, K_NO, K_NO, K_NO, K_NO,   K_BRIGHTUP, K_COLORUP, K_SATUP, K_NO, K_NO, K_NO},
-            {K_NO, K_NO, K_NO, K_NO, K_NO, K_NO,   K_BRIGHTDOWN, K_COLORDOWN, K_SATDOWN, K_NO, K_NO, K_NO},
-            {K_NO, K_NO, K_NO, K_NO, K_NO, K_NO,   K_NO, K_NO, K_NO, K_NO, K_NO, K_NO},
+            {K_NO, K_NO, K_F7, K_F8, K_F9, K_F12,   K_BRIGHTUP, K_COLORUP, K_SATUP, K_NO, K_PRT_SC, K_NO},
+            {K_NO, K_NO, K_F4, K_F5, K_F6, K_F11,   K_BRIGHTDOWN, K_COLORDOWN, K_SATDOWN, K_NO, K_NO, K_NO},
+            {K_NO, K_NO, K_F1, K_F2, K_F3, K_F10,   K_NO, K_NO, K_NO, K_NO, K_NO, K_NO},
             {K_NO, K_NO, K_NO, K_NO, K_NO, K_NO,   K_NO, K_NO, K_NO, K_NO, K_NO, K_NO}
         }
     };
