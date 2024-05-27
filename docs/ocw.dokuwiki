@@ -37,6 +37,8 @@ Each half of the board will have its own Arduino ProMicro. One of them will be t
 
 ===== Hardware Design =====
 
+==== Components ====
+
 The following components are required to build the keyboard:
   * 2x Custom PCBs
   * 2x 3D Printed Cases
@@ -54,7 +56,10 @@ The following components are required to build the keyboard:
   * 44x MX Switches
   * 1x Keycaps Set
   * 1x TRRS Cable
-  * 1x USB Type-C Cable
+  * 1x USB Type-C Cable \\
+
+
+==== Layout Design ====
 
 I started designing the layout by removing keycaps from some of my keyboards and placing them in the positions I wanted. Early versions looked like this:
 
@@ -64,7 +69,179 @@ I started designing the layout by removing keycaps from some of my keyboards and
 After some trial-and-error arranging the keys, I settled with the following layout that I found very comfortable:
 {{ :pm:prj2024:ccontasel:matei.ionescu0703:final-keys-layout.jpeg?300 |}}\\
 
-The next step was to recreate it on the computer to have a reference for creating the PCB and case. I chose to use Ergogen for this task. Ergogen is an open-source project aiming to provide a common configuration format to describe ergonomic 2D layouts. I measured the dimensions of my keycaps and the angle of my thumb cluster and ended up with the following design:
+The next step was to recreate it on the computer to have a reference for creating the PCB and case. I chose to use [[https://ergogen.cache.works/|Ergogen]] for this task. Ergogen is an open-source project aiming to provide a common configuration format to describe ergonomic 2D layouts. First I measured the dimensions of my keycaps and the angle of my thumb cluster and started learning how to write a config file using Ergogen by following tutorials and the [[https://docs.ergogen.xyz/|Ergogen documentation]].
 
-{{ :pm:prj2024:ccontasel:matei.ionescu0703:measuring-layout.jpeg?300 |}}
+{{ :pm:prj2024:ccontasel:matei.ionescu0703:measuring-layout.jpeg?300 |}} \\
+
+The config file that I have written is this:
+<file text ergogen_config.txt>
+units:
+  spacing: U
+  key_size: 18.2
+  big_key_height: 23
+
+
+points:
+  key.height: key_size
+  key.width: key_size
+  key.spread: spacing
+  key.padding: spacing
+  zones:
+    matrix:
+      key:
+      columns:
+        outer:
+        pinky:
+        ring:
+          key.stagger: spacing/4
+        middle:
+          key.stagger: spacing/4
+        index:
+          key.stagger: -spacing/4
+        inner:
+          key.stagger: -spacing/4
+      rows:
+        bottom:
+        top:
+        home:
+    thumbfan:
+      anchor:
+        ref: matrix_index_bottom
+        shift: [-spacing/2.5, -spacing*1.2]
+        rotate: -29
+      columns:
+        near:
+          rows.thumb_extra.skip: true
+        home:
+          key.height: big_key_height
+          key.stagger: (big_key_height - key_size) / 2
+          rows.thumb_extra.skip: true
+        far:
+          rows.thumb.height: big_key_height
+          key.padding: big_key_height / 2 + key_size / 2 + 0.8
+      rows:
+        thumb:
+        thumb_extra:
+
+
+outlines:
+  keys:
+    - what: rectangle
+      where: true
+      operation: stack
+      size: [U, U]
+
+  plate:
+    - what: rectangle
+      where: true
+      operation: stack
+      size: [14, 14]
+    
+
+</file>
+
+The config file generates this layout:
+
 {{ :pm:prj2024:ccontasel:matei.ionescu0703:ergogen-layout.png?300 |}}\\
+
+
+==== PCB Design ====
+
+The next step was to design the PCBs for my project. After studying which CAD software would fit my needs better, I chose to use KiCAD because it is the most popular software for keyboard PCB design and there are libraries you can find on Github containing the footprints of the parts I chose to use.
+
+I started learning about how keyboards work, what components are needed and how are they connected to each other. After spending a lot of time reading documentation, researching other projects and watching tutorial I created my PCB schematic for the left side of the keyboard.
+
+{{ :pm:prj2024:ccontasel:matei.ionescu0703:schematic-left.png?600 |}}\\
+
+Using the Ergogen layout and the schematic, I began working on the PCB itself. After carefully placing all of the components in their position and creating mounting holes I started routing the PCB. The first problem occurred when I received my components from the store. The initial project featured a reset button, but because the dimensions of the Arduino ProMicro were bigger than the ones written on the store page, I had to remove it and readjust the PCB, and the footprint of the microcontroller. After a lot of work all that was left to be done was branding my PCB with the RootKB logo on the silkscreen. The final result looks like this:
+
+{{ :pm:prj2024:ccontasel:matei.ionescu0703:pcb-left.png?400 |}}
+{{ :pm:prj2024:ccontasel:matei.ionescu0703:pcb-left-front.png?400 |}}
+{{ :pm:prj2024:ccontasel:matei.ionescu0703:pcb-left-back.png?400 |}}\\
+
+
+Then I had to repeat the whole process for the right half.
+
+{{ :pm:prj2024:ccontasel:matei.ionescu0703:schematic-right.png?600 |}}\\
+{{ :pm:prj2024:ccontasel:matei.ionescu0703:pcb-right.png?400 |}}
+{{ :pm:prj2024:ccontasel:matei.ionescu0703:pcb-right-front.png?400 |}}
+{{ :pm:prj2024:ccontasel:matei.ionescu0703:pcb-right-back.png?400 |}}\\
+
+Next, I ordered the PCBs and prayed that they work as envisioned. \\
+
+
+==== Plate Design ====
+
+With the PCB ready, I imported the .dxf files to Fusion360 in order to create the plate. After researching the required dimensions that will allow the switches to click it, I created my first design meant to be made out of FR-4 or aluminum with a 1.5mm thickness. I also created annotated 2D drawings in AutoCAD for production. This ended up too expensive and would take too long to be made. So I redesigned the plate to be 3D printed with a 3mm thickness for more strength.
+
+{{ :pm:prj2024:ccontasel:matei.ionescu0703:plate-left.png?400 |}}
+{{ :pm:prj2024:ccontasel:matei.ionescu0703:plate-right.png?400 |}} \\
+
+==== Case Design ====
+
+In order to create the case I had to carefully calculate the dimensions. At this point I found out that the sockets I originally planned to use were to tall and the microcontroller would rise above the case (which would be an unacceptable design flow in my opinion), so I switched the socketing option:
+
+{{ :pm:prj2024:ccontasel:matei.ionescu0703:case-calculations.jpg?400 |}}\\
+
+The designed cases:
+{{ :pm:prj2024:ccontasel:matei.ionescu0703:case-left.png?400 |}}
+{{ :pm:prj2024:ccontasel:matei.ionescu0703:case-right.png?400 |}} \\
+
+And putting it all together:
+{{ :pm:prj2024:ccontasel:matei.ionescu0703:build-left.png?400 |}}
+
+
+==== Building The Keyboard ====
+
+I finally got all the components.
+
+{{ :pm:prj2024:ccontasel:matei.ionescu0703:physical-pcbs.jpeg?400 |}}
+{{ :pm:prj2024:ccontasel:matei.ionescu0703:physical-case_3d_printed.jpeg?400 |}} \\
+
+
+It was time to build the keyboard. I soldered all the 44 diodes, 44 switch sockets and 44 LEDs. For socketing the microcontrollers I used resistor legs as pins in order to fit the case as mentioned above.
+
+{{ :pm:prj2024:ccontasel:matei.ionescu0703:solder-setup.jpeg?400 |}}
+{{ :pm:prj2024:ccontasel:matei.ionescu0703:solder-pcb.jpeg?400 |}} \\
+
+After I bulit the first half, I wrote some quick scripts to test that everything works fine.
+
+{{ :pm:prj2024:ccontasel:matei.ionescu0703:half-build.jpeg?400 |}} \\
+
+And after another day of soldering I had two working keyboard halfs.
+
+{{ :pm:prj2024:ccontasel:matei.ionescu0703:final-result.jpeg?400 |}} \\
+
+
+===== Software =====
+The original plan was to use the LUFA library, but due to lack of time I ended us using the Arduino Framework.
+
+==== Matrix Scanning ====
+Scanning the matrix is the task that runs most of the time on the microcotroller. To store the state of the matrix I am using bit operations. Each half of the matrix is represented as a uint64_t number. Each half of the keyboard reads the state of the matrix representing the keys that are pressed. Then the right half of the matrix sends using UART its matrix state uint64_t number to the left half. The state of all keys on the keyboard is then obtained by using the bitwise OR operation.
+
+
+==== Sending Keys to PC ====
+The layers of the keyboard are represented in the keys.h file. According to which keys are pressed in the matrix state, the according key will be sent to the PC. When a layer changes all keys from that layer will be released.
+
+The layouts of the keyboard look like this:
+{{ :pm:prj2024:ccontasel:matei.ionescu0703:keyboard-layout.png?400 |}} \\
+
+
+
+==== RGB & OLED ====
+I have also implemented brightness and color control of the RGB lights on the keyboard. When the the brightness is modified the change can be seen on the display, and after a short period of time it goes back to displaying the logo. When changes happen, the Left half will send the new color to the right half over UART.
+
+
+
+===== Conclusion =====
+This was a challenging project, that took me a couple of months to design, build and program, but the result is awesome and I am happy I'm writing this part of the article on the keyboard I built from scratch.
+
+===== GitHub =====
+All the files for this project are available at [[https://github.com/Matei77/RootKB]], including the case design, PCB and software.
+
+===== Journal =====
+{{ :pm:prj2024:ccontasel:matei.ionescu0703:gantt.png?400 |}} \\
+
+
+
+
