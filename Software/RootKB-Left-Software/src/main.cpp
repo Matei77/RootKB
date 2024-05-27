@@ -27,10 +27,10 @@ void loop() {
         matrix::print_matrix(matrix::matrix_all);
     }
 
-    if (matrix::get_matrix_key_global(matrix::matrix_all, 0, 0) == 1) {
-        send_keys = 0;
-        Serial.println("Send keys off");
-    }
+    // if (matrix::get_matrix_key_global(matrix::matrix_all, 0, 0) == 1) {
+    //     send_keys = 0;
+    //     Serial.println("Send keys off");
+    // }
 
     if (send_keys == 1) {
         keys::send_keys();
