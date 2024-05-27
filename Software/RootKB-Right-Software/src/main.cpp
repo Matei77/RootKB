@@ -22,4 +22,6 @@ void loop() {
     }
 
     matrix::send_matrix();
+
+    rgb::read_rgb_info();
 }

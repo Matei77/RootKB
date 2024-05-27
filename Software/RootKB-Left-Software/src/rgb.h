@@ -8,4 +8,11 @@ namespace rgb {
     #define COLOR_ORDER GRB
 
     void init_rgb();
+    void hue_up();
+    void hue_down();
+    void brightness_up();
+    void brightness_down();
+    void saturation_up();
+    void saturation_down();
+    void send_rgb_info();
 }

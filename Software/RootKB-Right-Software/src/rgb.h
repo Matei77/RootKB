@@ -8,4 +8,5 @@ namespace rgb {
     #define COLOR_ORDER GRB
 
     void init_rgb();
+    void read_rgb_info();
 }
