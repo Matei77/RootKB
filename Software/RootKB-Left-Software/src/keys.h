@@ -86,6 +86,7 @@ namespace keys {
         K_RGUI,
         K_HOME = 210,
         K_END = 213,
+        K_DELETE = 212,
         K_RIGHT = 215,
         K_LEFT,
         K_DOWN,
@@ -102,7 +103,29 @@ namespace keys {
         K_F9,
         K_F10,
         K_F11,
-        K_F12
+        K_F12,
+        K_BL1 = '(',
+        K_BR1 = ')',
+        K_BL2 = '[',
+        K_BR2 = ']',
+        K_LCB = '{',
+        K_RCB = '}',
+        K_CHR11 = '^',
+        K_CHR12 = '&',
+        K_CHR13 = '_',
+        K_CHR14 = '|',
+        K_CHR15 = '~',
+        K_CHR21 = '=',
+        K_CHR22 = '+',
+        K_CHR23 = '-',
+        K_CHR24 = '*',
+        K_CHR25 = '%',
+        K_CHR26 = '\\',
+        K_CHR31 = '!',
+        K_CHR32 = '@',
+        K_CHR33 = '#',
+        K_CHR34 = '$',
+        K_CHR35 = '`',
     };
 
     const raw_keycode_t layouts[LAYOUTS_NUM][MATRIX_ROWS][MATRIX_COLS_BOTH] = {
@@ -114,16 +137,16 @@ namespace keys {
         },
 
         {
-            {K_ESC, K_NO, K_HOME, K_UP, K_END, K_NO,       K_NO, K_NO, K_NO, K_NO, K_NO, K_BACK},
-            {K_TAB, K_NO, K_LEFT, K_DOWN, K_RIGHT, K_NO,   K_NO, K_NO, K_NO, K_NO, K_NO, K_NO},
-            {K_LSFT, K_NO, K_NO, K_NO, K_NO, K_NO,         K_NO, K_NO, K_NO, K_NO, K_NO, K_RSFT},
+            {K_ESC, K_NO, K_HOME, K_UP, K_END, K_NO,       K_NO, K_BL1, K_BR1, K_NO, K_NO, K_BACK},
+            {K_TAB, K_NO, K_LEFT, K_DOWN, K_RIGHT, K_NO,   K_NO, K_LCB, K_RCB, K_NO, K_NO, K_NO},
+            {K_LSFT, K_NO, K_NO, K_NO, K_NO, K_NO,         K_NO, K_BL2, K_BR2, K_NO, K_NO, K_RSFT},
             {K_NO, K_NO, K_LALT, K_SPACE, K_NO, K_LGUI,    K_NO, K_NO, K_ENTER, K_RCTRL, K_NO, K_NO}
         },
 
         {
-            {K_ESC, K_NO, K_7, K_8, K_9, K_NO,   K_NO, K_NO, K_NO, K_NO, K_NO, K_BACK},
-            {K_TAB, K_NO, K_4, K_5, K_6, K_NO,   K_NO, K_NO, K_NO, K_NO, K_NO, K_NO},
-            {K_LSFT, K_0, K_1, K_2, K_3, K_NO,   K_NO, K_NO, K_NO, K_NO, K_NO, K_RSFT},
+            {K_ESC, K_NO, K_7, K_8, K_9, K_NO,   K_CHR11, K_CHR12, K_CHR13, K_CHR14, K_CHR15, K_DELETE},
+            {K_TAB, K_NO, K_4, K_5, K_6, K_NO,   K_CHR21, K_CHR22, K_CHR23, K_CHR24, K_CHR25, K_CHR26},
+            {K_LSFT, K_0, K_1, K_2, K_3, K_NO,   K_CHR31, K_CHR32, K_CHR33, K_CHR34, K_CHR35, K_RSFT},
             {K_NO, K_NO, K_LALT, K_SPACE, K_NO,  K_LGUI, K_NO, K_NO, K_ENTER, K_RCTRL, K_NO, K_NO}
         },
 
