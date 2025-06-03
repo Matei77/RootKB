@@ -26,7 +26,7 @@ namespace matrix {
     // set the key in the left matrix using local row and column indexes for the left matrix
     // (0, 0) = ESC
     inline void set_matrix_key_left(matrix_t& matrix, uint8_t row, uint8_t col) {
-        matrix |= ((matrix_t)1 << (row  * 2 * MATRIX_COLS + col));
+        matrix |= ((matrix_t)1 << (row * 2 * MATRIX_COLS + col));
     }
 
     // set the key in the right matrix using local row and column indexes for the right matrix

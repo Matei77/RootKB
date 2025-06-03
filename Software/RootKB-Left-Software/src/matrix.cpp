@@ -75,4 +75,4 @@ namespace matrix {
         Serial.println("");
     }
 
-} // namespace keys
+} // namespace matrix
