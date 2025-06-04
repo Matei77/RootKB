@@ -22,10 +22,10 @@ void setup() {
 void loop() {
     matrix::get_full_matrix();
 
-    if (Serial.read() == 'p') {
-        Serial.println("matrix all:");
-        matrix::print_matrix(matrix::matrix_all);
-    }
+    // if (Serial.read() == 'p') {
+    //     Serial.println("matrix all:");
+    //     matrix::print_matrix(matrix::matrix_all);
+    // }
 
     // if (matrix::get_matrix_key_global(matrix::matrix_all, 0, 0) == 1) {
     //     send_keys = 0;

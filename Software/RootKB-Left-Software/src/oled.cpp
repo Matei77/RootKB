@@ -39,13 +39,20 @@ namespace oled {
         display_logo_flag = true;
     }
 
-    void show_brightness_and_color(uint8_t brightness, uint8_t hue) {
+    void show_rgb_info(uint8_t brightness, uint8_t hue, uint8_t saturation) {
+        String brightness_str = String(brightness);
+        String hue_str = String(hue);
+        String saturation_str = String(saturation);
+        
         display.clearDisplay();
         display.setTextSize(1);
         display.setTextColor(WHITE);
         display.setCursor(0, 0);
-        display.println("Brightness: " + String(brightness));
-        display.println("Hue: " + String(hue));
+
+        display.print("B: " + brightness_str 
+                  + "\nH: " + hue_str 
+                  + "\nS: " + saturation_str);
+        
         display.display();
         display_logo_flag = false;
 

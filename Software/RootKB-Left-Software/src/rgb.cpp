@@ -5,7 +5,7 @@
 namespace rgb {
     uint8_t brightness = 250;
     uint8_t saturation = 250;
-    uint8_t hue = 140;
+    uint8_t hue = 0;
     CRGB leds[NUM_LEDS];
 
     void init_rgb() {
@@ -130,6 +130,6 @@ namespace rgb {
     }
 
     void display_rgb_info() {
-        oled::show_brightness_and_color(brightness, hue);
+        oled::show_rgb_info(brightness, hue, saturation);
     }
 }

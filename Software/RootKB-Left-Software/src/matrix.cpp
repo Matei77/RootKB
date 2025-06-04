@@ -16,14 +16,21 @@ namespace matrix {
         }
     }
 
-    void get_matrix_right() {
+    void get_matrix_right() {        
         if (Serial1.available() >= (int)sizeof(matrix_right)) {
-            Serial1.readBytes((byte *)&matrix_right, sizeof(matrix_right));
+            size_t read_bytes = 0;
+            while (read_bytes != sizeof(matrix_right)) {
+                size_t bytes_left = sizeof(matrix_right) - read_bytes;
+                size_t count = Serial1.readBytes((byte *)&matrix_right, bytes_left);
+                read_bytes += count;
+            }
         }
     }
 
     void read_matrix() {
         // read the matrix
+        matrix_left = 0;
+
         for (uint8_t row_index = 0; row_index < MATRIX_ROWS; ++row_index) {
             uint8_t cur_row_pin = MATRIX_ROW_PINS[row_index];
             pinMode(cur_row_pin, OUTPUT);
@@ -36,9 +43,6 @@ namespace matrix {
 
                 if (digitalRead(cur_col_pin) == LOW) {
                     set_matrix_key_left(matrix_left, row_index, col_index);
-
-                } else {
-                    clear_matrix_key_left(matrix_left, row_index, col_index);
                 }
 
                 pinMode(cur_col_pin, INPUT);

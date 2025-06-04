@@ -17,9 +17,9 @@ void setup() {
 
 
 void loop() {
-    if (Serial.read() == 'p') {
-        matrix::print_matrix();
-    }
+    // if (Serial.read() == 'p') {
+    //     matrix::print_matrix();
+    // }
 
     matrix::send_matrix();
 
