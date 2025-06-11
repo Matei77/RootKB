@@ -6,6 +6,7 @@
 // RootKB Left
 
 int send_keys = 1;
+// keys::raw_keycode_t custom_layout[keys::LAYERS_NUM][MATRIX_ROWS][MATRIX_COLS_BOTH];
 
 void setup() {
     Serial.begin(9600);
@@ -21,6 +22,24 @@ void setup() {
 
 void loop() {
     matrix::get_full_matrix();
+
+
+    if (Serial.available() > 0) {
+        size_t read_bytes = 0;
+        while (read_bytes != sizeof(keys::layout)) {
+            size_t bytes_left = sizeof(keys::layout) - read_bytes;
+            size_t count = Serial.readBytes((byte *)&keys::layout, bytes_left);
+            read_bytes += count;
+            oled::displaySize(read_bytes);
+        }
+
+        // Serial.print("received: ");
+        // Serial.print(received_code);
+
+        // if (received_code == keys::K_A) {
+        //     rgb::hue_up();
+        // }
+    }
 
     // if (Serial.read() == 'p') {
     //     Serial.println("matrix all:");

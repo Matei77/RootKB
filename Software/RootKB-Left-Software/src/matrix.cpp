@@ -60,23 +60,23 @@ namespace matrix {
         matrix_all = matrix_left | matrix_right;
     }
 
-    void print_matrix(uint64_t matrix) {
-        for (uint8_t row_index = 0; row_index < MATRIX_ROWS; ++row_index) {
-            if (row_index < 10) {
-                Serial.print(F("0"));
-            }
-            Serial.print(row_index);
-            Serial.print(F(": "));
+    // void print_matrix(uint64_t matrix) {
+    //     for (uint8_t row_index = 0; row_index < MATRIX_ROWS; ++row_index) {
+    //         if (row_index < 10) {
+    //             Serial.print(F("0"));
+    //         }
+    //         Serial.print(row_index);
+    //         Serial.print(F(": "));
 
-            for (uint8_t col_index = 0; col_index < MATRIX_COLS_BOTH; ++col_index) {
-                Serial.print(get_matrix_key_global(matrix, row_index, col_index));
-                if (col_index < MATRIX_COLS_BOTH - 1) {
-                    Serial.print(F(", "));
-                }
-            }
-            Serial.println("");
-        }
-        Serial.println("");
-    }
+    //         for (uint8_t col_index = 0; col_index < MATRIX_COLS_BOTH; ++col_index) {
+    //             Serial.print(get_matrix_key_global(matrix, row_index, col_index));
+    //             if (col_index < MATRIX_COLS_BOTH - 1) {
+    //                 Serial.print(F(", "));
+    //             }
+    //         }
+    //         Serial.println("");
+    //     }
+    //     Serial.println("");
+    // }
 
 } // namespace matrix

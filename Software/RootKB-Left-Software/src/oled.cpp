@@ -1,7 +1,7 @@
 #include <Adafruit_SSD1306.h>
-// #include <Adafruit_GFX.h>
 #include <Wire.h>
 #include "oled.h"
+#include "keys.h"
 
 namespace oled {
     Adafruit_SSD1306 display(128, 32, &Wire, -1);
@@ -11,7 +11,7 @@ namespace oled {
 
     void init_oled() {
         if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
-            Serial.println(F("SSD1306 allocation failed"));
+            // Serial.println(F("SSD1306 allocation failed"));
         }
 
         delay(2000);
@@ -56,6 +56,54 @@ namespace oled {
         display.display();
         display_logo_flag = false;
 
+        reset_time = millis() + time_window;
+    }
+
+    // void displayVal(keys::raw_keycode_t num) {    
+    //     display.clearDisplay();
+    //     display.setTextSize(1);
+    //     display.setTextColor(WHITE);
+    //     display.setCursor(0, 0);
+        
+    //     display.print(num);
+        
+    //     display.display();
+    //     display_logo_flag = false;
+
+    //     reset_time = millis() + time_window;
+    // }
+
+    void displayVal(keys::raw_keycode_t num) {
+        display.clearDisplay();
+        display.setTextSize(1);
+        display.setTextColor(WHITE);
+        display.setCursor(0, 0);
+
+        display.println(sizeof(num));
+
+        byte* bytePtr = (byte*)&num;
+        for (size_t i = 0; i < sizeof(num); i++) {
+            display.print("0x");
+            if (bytePtr[i] < 0x10) display.print("0");
+            display.print(bytePtr[i], HEX);
+            display.print(" ");
+        }
+
+        display.display();
+        display_logo_flag = false;
+        reset_time = millis() + time_window;
+    }
+
+    void displaySize(size_t num) {
+        display.clearDisplay();
+        display.setTextSize(1);
+        display.setTextColor(WHITE);
+        display.setCursor(0, 0);
+
+        display.println(num);
+
+        display.display();
+        display_logo_flag = false;
         reset_time = millis() + time_window;
     }
 }
