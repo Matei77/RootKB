@@ -4,11 +4,11 @@
 #include "rgb.h"
 #include "oled.h"
 #include "request.h"
+#include "data_manager.h"
 
 // RootKB Right
 
 void setup() {
-    // Serial.begin(9600);
     Serial1.begin(115200);
 
     matrix::init_matrix_pins();

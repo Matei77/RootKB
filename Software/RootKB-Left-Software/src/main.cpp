@@ -2,10 +2,12 @@
 #include "keys.h"
 #include "rgb.h"
 #include "oled.h"
+#include "app_com.h"
+#include "data_manager.h"
 
 // RootKB Left
 
-int send_keys = 1;
+// int send_keys = 1;
 // keys::raw_keycode_t custom_layout[keys::LAYERS_NUM][MATRIX_ROWS][MATRIX_COLS_BOTH];
 
 void setup() {
@@ -16,12 +18,17 @@ void setup() {
     keys::init_keys();
     rgb::init_rgb();
     oled::init_oled();
+    // data_manager::init_eeprom();
 
     delay(1000);
 }
 
 void loop() {
+    rgb::light_rgb_effect();
+    oled::display_logo();
     matrix::get_full_matrix();
+    keys::send_keys();
+    app_com::receive_layout();
         
         // Serial.print("received: ");
         // Serial.print(received_code);
@@ -42,7 +49,5 @@ void loop() {
                 
     // if (send_keys == 1) {
     // }
-    keys::send_keys();
-    rgb::light_rgb_effect();
-    oled::display_logo();
+
 }

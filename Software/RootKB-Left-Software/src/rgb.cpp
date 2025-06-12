@@ -2,12 +2,13 @@
 #include "rgb.h"
 #include "oled.h"
 #include "request.h"
+#include "data_manager.h"
 
 namespace rgb {
     bool leds_reset = true;
     rgb_mode_t current_mode = rgb_mode_t::ALL;
     uint8_t brightness = 250;
-    uint8_t saturation = 250;
+    uint8_t saturation = 0;
     uint8_t hue = 0;
     CRGB leds[NUM_LEDS];
     const uint64_t effect_speed = 25;
@@ -16,10 +17,20 @@ namespace rgb {
     
     void init_rgb() {
         FastLED.addLeds<LED_TYPE, LED_PIN, COLOR_ORDER>(leds, NUM_LEDS);
-        FastLED.setBrightness(brightness);
+        FastLED.setBrightness(250);
+
+        current_mode = (rgb_mode_t)data_manager::get_rgb_mode();
+        hue = data_manager::get_rgb_hue();
+        saturation = data_manager::get_rgb_saturation();
+        brightness = data_manager::get_rgb_brightness();
         
-        leds_reset = true;
-        set_all_leds(hue, saturation, brightness);
+        // send_rgb_info();
+        
+        if (current_mode != RAINBOW) {
+            leds_reset = true;
+        } 
+        // set_all_leds(hue, saturation, brightness);
+
     }
     
     void set_all_leds(uint8_t hue, uint8_t saturation, uint8_t brightness) {
@@ -49,6 +60,8 @@ namespace rgb {
 
             leds_reset = true;
             set_all_leds(hue, saturation, brightness);
+
+            data_manager::save_rgb_hue(hue);
         }
     }
 
@@ -67,14 +80,12 @@ namespace rgb {
 
             leds_reset = true;
             set_all_leds(hue, saturation, brightness);
+
+            data_manager::save_rgb_hue(hue);
         }
     }
 
     void brightness_up() {
-        if (current_mode != rgb_mode_t::ALL) {
-            return;
-        }
-
         if (brightness + 25 > 250) {
             brightness = 250;
         } else {
@@ -85,14 +96,12 @@ namespace rgb {
 
             leds_reset = true;
             set_all_leds(hue, saturation, brightness);
+
+            data_manager::save_rgb_brightness(brightness);
         }
     }
 
     void brightness_down() {
-        if (current_mode != rgb_mode_t::ALL) {
-            return;
-        }
-
         if (brightness - 25 < 0) {
             brightness = 0;
         } else {
@@ -103,6 +112,8 @@ namespace rgb {
 
             leds_reset = true;
             set_all_leds(hue, saturation, brightness);
+
+            data_manager::save_rgb_brightness(brightness);
         }
     }
 
@@ -121,6 +132,8 @@ namespace rgb {
 
             leds_reset = true;
             set_all_leds(hue, saturation, brightness);
+
+            data_manager::save_rgb_saturation(saturation);
         }
     }
 
@@ -140,6 +153,7 @@ namespace rgb {
             leds_reset = true;
             set_all_leds(hue, saturation, brightness);
 
+            data_manager::save_rgb_saturation(saturation);
         }
     }
 
@@ -149,6 +163,8 @@ namespace rgb {
             leds_reset = true;
         }
         send_rgb_info();
+
+        data_manager::save_rgb_mode(current_mode);
     }
 
     void mode_down() {
@@ -157,6 +173,8 @@ namespace rgb {
             leds_reset = true;
         }
         send_rgb_info();
+
+        data_manager::save_rgb_mode(current_mode);
     }
 
     void send_rgb_info() {
@@ -185,7 +203,7 @@ namespace rgb {
         
         if (millis() > effect_reset_time) {
             for (uint8_t i = 0; i < NUM_LEDS; ++i) {
-                leds[i] = CHSV(baseHue + (i * 5), saturation, brightness);
+                leds[i] = CHSV(baseHue + (i * 5), 250, brightness);
             }
             FastLED.show();
             baseHue++;

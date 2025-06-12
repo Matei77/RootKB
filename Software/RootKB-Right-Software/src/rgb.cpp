@@ -1,25 +1,29 @@
 #include <FastLED.h>
 #include "rgb.h"
+#include "data_manager.h"
 
 namespace rgb {
     bool leds_reset = true;
     rgb_mode_t current_mode = rgb_mode_t::ALL;
     uint8_t brightness = 250;
     uint8_t saturation = 250;
-    uint8_t hue = 0;
+    uint8_t hue = 250;
     CRGB leds[NUM_LEDS];
     const uint64_t effect_speed = 25;
     uint64_t effect_reset_time = 0;
 
     void init_rgb() {
         FastLED.addLeds<LED_TYPE, LED_PIN, COLOR_ORDER>(leds, NUM_LEDS);
-        FastLED.setBrightness(brightness);
+        FastLED.setBrightness(250);
 
-        for (uint8_t led_index = 0; led_index < NUM_LEDS; ++led_index) {
-            leds[led_index] = CHSV(hue, saturation, brightness);
-        }
+        current_mode = (rgb_mode_t)data_manager::get_rgb_mode();
+        hue = data_manager::get_rgb_hue();
+        saturation = data_manager::get_rgb_saturation();
+        brightness = data_manager::get_rgb_brightness();
 
-        FastLED.show();
+        if (current_mode != RAINBOW) {
+            leds_reset = true;
+        } 
     }
 
     void set_all_leds(uint8_t hue, uint8_t saturation, uint8_t brightness) {
@@ -53,6 +57,8 @@ namespace rgb {
         if (current_mode != RAINBOW) {
             leds_reset = true;
         }
+
+        data_manager::save_rgb((uint8_t)current_mode, hue, saturation, brightness);
     }
 
     void rainbow_effect() {
@@ -60,7 +66,7 @@ namespace rgb {
         
         if (millis() > effect_reset_time) {
             for (uint8_t i = 0; i < NUM_LEDS; ++i) {
-                leds[i] = CHSV(baseHue + (i * 5), saturation, brightness);
+                leds[i] = CHSV(baseHue + (i * 5), 250, brightness);
             }
             FastLED.show();
             baseHue++;
