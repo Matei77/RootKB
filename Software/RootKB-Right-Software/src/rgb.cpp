@@ -9,7 +9,7 @@ namespace rgb {
     uint8_t saturation = 250;
     uint8_t hue = 250;
     CRGB leds[NUM_LEDS];
-    const uint64_t effect_speed = 25;
+    const uint64_t effect_speed = 50;
     uint64_t effect_reset_time = 0;
 
     void init_rgb() {
