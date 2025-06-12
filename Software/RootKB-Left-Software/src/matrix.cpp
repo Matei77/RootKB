@@ -1,10 +1,14 @@
 #include <Arduino.h>
 #include "matrix.h"
+#include "request.h"
 
 namespace matrix {
     matrix_t matrix_left = 0;
     matrix_t matrix_right = 0;
     matrix_t matrix_all = 0;
+    const uint64_t read_interval = 20; // 20 ms
+    uint64_t reset_time = 0;
+
 
     void init_matrix_pins() {
         for (uint8_t row_index = 0; row_index < MATRIX_ROWS; ++row_index) {
@@ -16,15 +20,30 @@ namespace matrix {
         }
     }
 
-    void get_matrix_right() {        
-        if (Serial1.available() >= (int)sizeof(matrix_right)) {
-            size_t read_bytes = 0;
-            while (read_bytes != sizeof(matrix_right)) {
-                size_t bytes_left = sizeof(matrix_right) - read_bytes;
-                size_t count = Serial1.readBytes((byte *)&matrix_right, bytes_left);
-                read_bytes += count;
-            }
+    void get_matrix_right() {
+        matrix_right = 0;
+        request::send_request(request::GET_MATRIX);
+        
+        size_t read_bytes = 0;
+        while (read_bytes != sizeof(matrix_right)) {
+            size_t bytes_left = sizeof(matrix_right) - read_bytes;
+            size_t count = Serial1.readBytes((byte *)&matrix_right + read_bytes, bytes_left);
+            read_bytes += count;
         }
+        // if (Serial1.available() >= (int)sizeof(matrix_right)) {
+            // Serial.println(Serial1.available());
+            // Serial.print("Read bytes: ");
+            // Serial.println(read_bytes);
+            // Serial.print("Received right half: ");
+            // byte* bytePtr = (byte*)&matrix_right;
+            // for (size_t i = 0; i < sizeof(matrix_right); i++) {
+            //     // Serial.print("0x");
+            //     // if (bytePtr[i] < 0x10) Serial.print("0");
+            //     Serial.print(bytePtr[i], BIN);
+            //     Serial.print(" ");
+            // }
+            // Serial.println();
+        // }
     }
 
     void read_matrix() {
@@ -54,10 +73,25 @@ namespace matrix {
     }
 
     void get_full_matrix() {
-        read_matrix();
-        get_matrix_right();
 
-        matrix_all = matrix_left | matrix_right;
+        if (millis() > reset_time) {
+            read_matrix();
+            get_matrix_right();
+
+            matrix_all = matrix_left | matrix_right;
+            // Serial.print("Matrix all: ");
+            // byte* bytePtr = (byte*)&matrix_all;
+            // for (size_t i = 0; i < sizeof(matrix_all); i++) {
+            //     // Serial.print("0x");
+            //     // if (bytePtr[i] < 0x10) Serial.print("0");
+            //     Serial.print(bytePtr[i], BIN);
+            //     Serial.print(" ");
+            // }
+            // Serial.println();
+
+            reset_time = millis() + read_interval;
+        }
+
     }
 
     // void print_matrix(uint64_t matrix) {

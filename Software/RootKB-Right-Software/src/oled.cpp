@@ -7,9 +7,7 @@ namespace oled {
     Adafruit_SSD1306 display(128, 32, &Wire, -1);
 
     void init_oled() {
-        if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
-            Serial.println(F("SSD1306 allocation failed"));
-        }
+        display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
 
         delay(2000);
         

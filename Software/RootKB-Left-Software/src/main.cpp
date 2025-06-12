@@ -22,38 +22,27 @@ void setup() {
 
 void loop() {
     matrix::get_full_matrix();
-
-
-    if (Serial.available() > 0) {
-        size_t read_bytes = 0;
-        while (read_bytes != sizeof(keys::layout)) {
-            size_t bytes_left = sizeof(keys::layout) - read_bytes;
-            size_t count = Serial.readBytes((byte *)&keys::layout, bytes_left);
-            read_bytes += count;
-            oled::displaySize(read_bytes);
-        }
-
+        
         // Serial.print("received: ");
         // Serial.print(received_code);
-
+        
         // if (received_code == keys::K_A) {
-        //     rgb::hue_up();
-        // }
-    }
-
-    // if (Serial.read() == 'p') {
-    //     Serial.println("matrix all:");
-    //     matrix::print_matrix(matrix::matrix_all);
+            //     rgb::hue_up();
+            // }
+        
+        // if (Serial.read() == 'p') {
+            //     Serial.println("matrix all:");
+            //     matrix::print_matrix(matrix::matrix_all);
+            // }
+            
+            // if (matrix::get_matrix_key_global(matrix::matrix_all, 0, 0) == 1) {
+                //     send_keys = 0;
+                //     Serial.println("Send keys off");
+                // }
+                
+    // if (send_keys == 1) {
     // }
-
-    // if (matrix::get_matrix_key_global(matrix::matrix_all, 0, 0) == 1) {
-    //     send_keys = 0;
-    //     Serial.println("Send keys off");
-    // }
-
-    if (send_keys == 1) {
-        keys::send_keys();
-    }
-
+    keys::send_keys();
+    rgb::light_rgb_effect();
     oled::display_logo();
 }

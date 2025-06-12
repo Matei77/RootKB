@@ -1,11 +1,14 @@
+#include <Arduino.h>
+
 #include "matrix.h"
 #include "rgb.h"
 #include "oled.h"
+#include "request.h"
 
 // RootKB Right
 
 void setup() {
-    Serial.begin(9600);
+    // Serial.begin(9600);
     Serial1.begin(115200);
 
     matrix::init_matrix_pins();
@@ -17,11 +20,6 @@ void setup() {
 
 
 void loop() {
-    // if (Serial.read() == 'p') {
-    //     matrix::print_matrix();
-    // }
-
-    matrix::send_matrix();
-
-    rgb::read_rgb_info();
+    request::manage_request();
+    rgb::light_rgb_effect();
 }

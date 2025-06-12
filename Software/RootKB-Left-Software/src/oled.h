@@ -1,3 +1,5 @@
+#pragma once
+
 #include "keys.h"
 
 namespace oled {

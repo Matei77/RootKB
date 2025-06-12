@@ -1,7 +1,7 @@
 #include "matrix.h"
 
 namespace matrix {
-    matrix_t matrix;
+    matrix_t matrix_right;
 
     void init_matrix_pins() {
         for (uint8_t row_index = 0; row_index < MATRIX_ROWS; ++row_index) {
@@ -15,6 +15,8 @@ namespace matrix {
 
     void read_matrix() {
         // read the matrix
+        matrix_right = 0;
+
         for (uint8_t row_index = 0; row_index < MATRIX_ROWS; ++row_index) {
             uint8_t cur_row_pin = MATRIX_ROW_PINS[row_index];
             pinMode(cur_row_pin, OUTPUT);
@@ -26,10 +28,7 @@ namespace matrix {
                 pinMode(cur_col_pin, INPUT_PULLUP);
 
                 if (digitalRead(cur_col_pin) == LOW) {
-                    set_matrix_key_right(matrix, row_index, col_index);
-
-                } else {
-                    clear_matrix_key_right(matrix, row_index, col_index);
+                    set_matrix_key_right(matrix_right, row_index, col_index);
                 }
 
                 pinMode(cur_col_pin, INPUT);
@@ -40,33 +39,19 @@ namespace matrix {
         }
     }
 
-    void print_matrix() {
-        for (uint8_t row_index = 0; row_index < MATRIX_ROWS; ++row_index) {
-            if (row_index < 10) {
-                Serial.print(F("0"));
-            }
-            Serial.print(row_index);
-            Serial.print(F(": "));
-
-            for (uint8_t col_index = 0; col_index < MATRIX_COLS_BOTH; ++col_index) {
-                Serial.print(get_matrix_key_global(matrix, row_index, col_index));
-                if (col_index < MATRIX_COLS_BOTH - 1) {
-                    Serial.print(F(", "));
-                }
-            }
-            Serial.println("");
-        }
-        Serial.println("");
-    }
-
     void send_matrix() {
         read_matrix();
-
-        if (Serial1.availableForWrite() >= (int)sizeof(matrix)) {
-            Serial1.write((byte *)&matrix, sizeof(matrix));
+        
+        // if (Serial1.availableForWrite() >= (int)sizeof(matrix_right)) {
+        size_t written_bytes = 0;
+        while (written_bytes != sizeof(matrix_right)) {
+            size_t bytes_left = sizeof(matrix_right) - written_bytes;
+            size_t count = Serial1.write((byte *)&matrix_right + written_bytes, bytes_left);
+            written_bytes += count;
         }
-
-        delay(20);
+        
+        Serial1.flush();
+        // }      
     }
 
 } // namespace matrix
