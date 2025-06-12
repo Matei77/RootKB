@@ -1,4 +1,5 @@
 #include <EEPROM.h>
+#include "keys.h"
 
 namespace data_manager {
 
@@ -15,19 +16,19 @@ namespace data_manager {
         EEPROM.write(3, brightness);
     }
 
-    void save_rgb_mode(uint8_t mode) {
+    void save_rgb_mode(const uint8_t mode) {
         EEPROM.write(0, mode);
     }
 
-    void save_rgb_hue(uint8_t hue) {
+    void save_rgb_hue(const uint8_t hue) {
         EEPROM.write(1, hue);
     }
 
-    void save_rgb_saturation(uint8_t saturation) {
+    void save_rgb_saturation(const uint8_t saturation) {
         EEPROM.write(2, saturation);
     }
 
-    void save_rgb_brightness(uint8_t brightness) {
+    void save_rgb_brightness(const uint8_t brightness) {
         EEPROM.write(3, brightness);
     }
 
@@ -45,5 +46,27 @@ namespace data_manager {
 
     uint8_t get_rgb_brightness() {
         return EEPROM.read(3);
+    }
+
+    void save_layout(const keys::raw_keycode_t layout[keys::LAYERS_NUM][MATRIX_ROWS][MATRIX_COLS_BOTH]) {
+        uint16_t pos = 4;
+        for (uint8_t layer = 0; layer < keys::LAYERS_NUM; ++layer) {
+            for (uint8_t row = 0; row < MATRIX_ROWS; ++row) {
+                for (uint8_t col = 0; col < MATRIX_COLS_BOTH; ++col) {
+                    EEPROM.write(pos++, layout[layer][row][col]);
+                }
+            }
+        }
+    }
+
+    void load_layout(keys::raw_keycode_t layout[keys::LAYERS_NUM][MATRIX_ROWS][MATRIX_COLS_BOTH]) {
+        uint16_t pos = 4;
+        for (uint8_t layer = 0; layer < keys::LAYERS_NUM; ++layer) {
+            for (uint8_t row = 0; row < MATRIX_ROWS; ++row) {
+                for (uint8_t col = 0; col < MATRIX_COLS_BOTH; ++col) {
+                    layout[layer][row][col] = (keys::raw_keycode_t)EEPROM.read(pos++);
+                }
+            }
+        }
     }
 }

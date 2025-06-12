@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include "app_com.h"
 #include "keys.h"
+#include "data_manager.h"
 
 namespace app_com {
 
@@ -13,6 +14,8 @@ namespace app_com {
                 read_bytes += count;
                 // oled::displaySize(read_bytes);
             }
+
+            data_manager::save_layout(keys::layout);
         }
     }
 }

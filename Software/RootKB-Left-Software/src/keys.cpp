@@ -1,7 +1,8 @@
+#include <Keyboard.h>
 #include "keys.h"
 #include "matrix.h"
 #include "rgb.h"
-#include <Keyboard.h>
+#include "data_manager.h"
 
 namespace keys {
     raw_keycode_t layout[LAYERS_NUM][MATRIX_ROWS][MATRIX_COLS_BOTH] = { K_NO };
@@ -28,7 +29,8 @@ namespace keys {
     void init_keys() {
         Keyboard.begin();
 
-        memcpy(layout, initial_layout, sizeof(initial_layout));
+        // memcpy(layout, initial_layout, sizeof(initial_layout));
+        data_manager::load_layout(layout);
 
         // set the masks for the layers
         for (uint8_t row_index = 0; row_index < MATRIX_ROWS; ++row_index) {

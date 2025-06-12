@@ -19,6 +19,7 @@ void setup() {
     rgb::init_rgb();
     oled::init_oled();
     // data_manager::init_eeprom();
+    // data_manager::save_layout(keys::initial_layout);
 
     delay(1000);
 }
