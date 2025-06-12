@@ -6,7 +6,7 @@ namespace matrix {
     matrix_t matrix_left = 0;
     matrix_t matrix_right = 0;
     matrix_t matrix_all = 0;
-    const uint64_t read_interval = 20; // 20 ms
+    const uint64_t read_interval = 20;
     uint64_t reset_time = 0;
 
 
@@ -24,16 +24,21 @@ namespace matrix {
         matrix_right = 0;
         request::send_request(request::GET_MATRIX);
         
+        // Serial.println(Serial1.available());
         size_t read_bytes = 0;
         while (read_bytes != sizeof(matrix_right)) {
             size_t bytes_left = sizeof(matrix_right) - read_bytes;
-            size_t count = Serial1.readBytes((byte *)&matrix_right + read_bytes, bytes_left);
-            read_bytes += count;
+            if (Serial1.available() >= (int)bytes_left) {
+                size_t count = Serial1.readBytes((byte *)&matrix_right + read_bytes, bytes_left);
+                read_bytes += count;
+            } 
+            // else {
+            //     Serial.print("Waiting for more bytes");
+            // }
         }
-        // if (Serial1.available() >= (int)sizeof(matrix_right)) {
-            // Serial.println(Serial1.available());
-            // Serial.print("Read bytes: ");
-            // Serial.println(read_bytes);
+        // }
+        // Serial.print("Read bytes: ");
+        // Serial.println(read_bytes);
             // Serial.print("Received right half: ");
             // byte* bytePtr = (byte*)&matrix_right;
             // for (size_t i = 0; i < sizeof(matrix_right); i++) {

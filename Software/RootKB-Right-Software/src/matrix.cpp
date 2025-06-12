@@ -46,8 +46,10 @@ namespace matrix {
         size_t written_bytes = 0;
         while (written_bytes != sizeof(matrix_right)) {
             size_t bytes_left = sizeof(matrix_right) - written_bytes;
-            size_t count = Serial1.write((byte *)&matrix_right + written_bytes, bytes_left);
-            written_bytes += count;
+            if (Serial1.availableForWrite() >= (int)bytes_left) {
+                size_t count = Serial1.write((byte *)&matrix_right + written_bytes, bytes_left);
+                written_bytes += count;
+            }
         }
         
         Serial1.flush();

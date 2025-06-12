@@ -8,7 +8,7 @@ namespace rgb {
     uint8_t saturation = 250;
     uint8_t hue = 0;
     CRGB leds[NUM_LEDS];
-    const uint64_t effect_speed = 10;
+    const uint64_t effect_speed = 25;
     uint64_t effect_reset_time = 0;
 
     void init_rgb() {
@@ -39,8 +39,10 @@ namespace rgb {
         size_t read_bytes = 0;
         while (read_bytes != sizeof(rgb_info)) {
             size_t bytes_left = sizeof(rgb_info) - read_bytes;
-            size_t count = Serial1.readBytes((byte *)rgb_info + read_bytes, bytes_left);
-            read_bytes += count;
+            if (Serial1.available() >= (int)bytes_left) {
+                size_t count = Serial1.readBytes((byte *)rgb_info + read_bytes, bytes_left);
+                read_bytes += count;
+            }
         }
 
         current_mode = (rgb_mode_t)rgb_info[0];

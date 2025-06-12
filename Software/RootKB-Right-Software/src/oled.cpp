@@ -18,4 +18,22 @@ namespace oled {
         display.println("RootKB");
         display.display();
     }
+
+    void print_val(uint8_t num) {        
+        display.clearDisplay();
+        display.setTextSize(2);
+        display.setTextColor(WHITE);
+        display.setCursor(20, 10);
+        display.println(num);
+        display.display();
+
+        // delay(100);
+        
+        // display.clearDisplay();
+        // display.setTextSize(2);
+        // display.setTextColor(WHITE);
+        // display.setCursor(20, 10);
+        // display.println("RootKB");
+        // display.display();
+    }
 }
