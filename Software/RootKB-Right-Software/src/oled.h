@@ -1,6 +1,9 @@
 #pragma once
 
+#include <Adafruit_SSD1306.h>
+#include <Wire.h>
+
 namespace oled {
     void init_oled();
-    void print_val(uint8_t num);
-}
+
+} // namespace oled

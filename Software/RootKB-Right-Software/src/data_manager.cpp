@@ -1,13 +1,6 @@
 #include <EEPROM.h>
 
 namespace data_manager {
-
-    void init_eeprom() {
-        for (uint16_t i = 0 ; i < EEPROM.length() ; i++) {
-                EEPROM.write(i, 0);
-        }
-    }
-
     void save_rgb(uint8_t mode, uint8_t hue, uint8_t saturation, uint8_t brightness) {
         EEPROM.update(0, mode);
         EEPROM.update(1, hue);
@@ -31,6 +24,8 @@ namespace data_manager {
         EEPROM.update(3, brightness);
     }
 
+    // -------------------------------------------------------------------------
+
     uint8_t get_rgb_mode() {
         return EEPROM.read(0);
     }
@@ -46,4 +41,5 @@ namespace data_manager {
     uint8_t get_rgb_brightness() {
         return EEPROM.read(3);
     }
-}
+
+} // namespace data_manager

@@ -1,15 +1,13 @@
 #include "request.h"
-#include "rgb.h"
-#include "matrix.h"
-#include "oled.h"
-#include <Arduino.h>
+
 
 namespace request {
     const uint64_t read_interval = 5;
     uint64_t reset_time = 0;
 
-    void manage_request() {
+    // -------------------------------------------------------------------------
 
+    void manage_request() {
         if (millis() > reset_time) {
             request_t request;
             
@@ -32,6 +30,6 @@ namespace request {
 
             reset_time = millis() + read_interval;
         }
-        
     }
-}
+
+} // namespace request

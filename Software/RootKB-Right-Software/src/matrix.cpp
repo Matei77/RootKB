@@ -3,6 +3,8 @@
 namespace matrix {
     matrix_t matrix_right;
 
+    // -------------------------------------------------------------------------
+
     void init_matrix_pins() {
         for (uint8_t row_index = 0; row_index < MATRIX_ROWS; ++row_index) {
             pinMode(MATRIX_ROW_PINS[row_index], INPUT_PULLUP);
@@ -12,6 +14,8 @@ namespace matrix {
             pinMode(MATRIX_COL_PINS[col_index], INPUT);
         }
     }
+
+    // -------------------------------------------------------------------------
 
     void read_matrix() {
         // read the matrix
@@ -39,10 +43,11 @@ namespace matrix {
         }
     }
 
+    // -------------------------------------------------------------------------
+
     void send_matrix() {
         read_matrix();
         
-        // if (Serial1.availableForWrite() >= (int)sizeof(matrix_right)) {
         size_t written_bytes = 0;
         while (written_bytes != sizeof(matrix_right)) {
             size_t bytes_left = sizeof(matrix_right) - written_bytes;
@@ -52,8 +57,7 @@ namespace matrix {
             }
         }
         
-        Serial1.flush();
-        // }      
+        Serial1.flush();   
     }
 
 } // namespace matrix
