@@ -1,9 +1,6 @@
-#include "request.h"
-#include "rgb.h"
-#include "matrix.h"
-#include <Arduino.h>
+#include "right_half_com.h"
 
-namespace request {
+namespace right_half_com {  
     void send_request(request_t request) {
         if (Serial1.availableForWrite() > (int)sizeof(request)) {
             size_t written_bytes = 0;
@@ -16,4 +13,5 @@ namespace request {
             Serial1.flush();
         }
     }
-}
+
+} // namespace right_half_com

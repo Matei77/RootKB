@@ -1,7 +1,8 @@
 #pragma once
 
 #include <stdint.h>
-#include "keys.h"
+
+#include "kb_conf.h"
 
 namespace data_manager {
     void init_eeprom();
@@ -18,6 +19,7 @@ namespace data_manager {
     uint8_t get_rgb_saturation();
     uint8_t get_rgb_brightness();
 
-    void save_layout(const keys::raw_keycode_t layout[keys::LAYERS_NUM][MATRIX_ROWS][MATRIX_COLS_BOTH]);
-    void load_layout(keys::raw_keycode_t layout[keys::LAYERS_NUM][MATRIX_ROWS][MATRIX_COLS_BOTH]);
-}
+    void save_layout(const kb_conf::raw_keycode_t layout[kb_conf::LAYERS][kb_conf::ROWS][kb_conf::COLS]);
+    void load_layout(kb_conf::raw_keycode_t layout[kb_conf::LAYERS][kb_conf::ROWS][kb_conf::COLS]);
+
+} // namespace data_manager

@@ -1,6 +1,4 @@
-#include <Arduino.h>
 #include "matrix.h"
-#include "request.h"
 
 namespace matrix {
     matrix_t matrix_left = 0;
@@ -22,33 +20,17 @@ namespace matrix {
 
     void get_matrix_right() {
         matrix_right = 0;
-        request::send_request(request::GET_MATRIX);
+
+        right_half_com::send_request(right_half_com::GET_MATRIX);
         
-        // Serial.println(Serial1.available());
         size_t read_bytes = 0;
         while (read_bytes != sizeof(matrix_right)) {
             size_t bytes_left = sizeof(matrix_right) - read_bytes;
             if (Serial1.available() >= (int)bytes_left) {
                 size_t count = Serial1.readBytes((byte *)&matrix_right + read_bytes, bytes_left);
                 read_bytes += count;
-            } 
-            // else {
-            //     Serial.print("Waiting for more bytes");
-            // }
+            }
         }
-        // }
-        // Serial.print("Read bytes: ");
-        // Serial.println(read_bytes);
-            // Serial.print("Received right half: ");
-            // byte* bytePtr = (byte*)&matrix_right;
-            // for (size_t i = 0; i < sizeof(matrix_right); i++) {
-            //     // Serial.print("0x");
-            //     // if (bytePtr[i] < 0x10) Serial.print("0");
-            //     Serial.print(bytePtr[i], BIN);
-            //     Serial.print(" ");
-            // }
-            // Serial.println();
-        // }
     }
 
     void read_matrix() {

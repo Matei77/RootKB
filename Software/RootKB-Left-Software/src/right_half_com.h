@@ -1,13 +1,13 @@
 #pragma once
 
-#include <stdint.h>
+#include <Arduino.h>
 
-namespace request {
-
+namespace right_half_com {
     enum request_t: uint8_t {
         GET_MATRIX,
         SET_RGB
     };
 
     void send_request(request_t request);
-}
+
+} // namespace right_half_com
