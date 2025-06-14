@@ -3,6 +3,7 @@
 #include <Arduino.h>
 
 #include "right_half_com.h"
+#include "serial.h"
 
 namespace matrix {
     constexpr uint8_t MATRIX_ROWS = 4;
@@ -10,18 +11,27 @@ namespace matrix {
     constexpr uint8_t MATRIX_COLS_BOTH =  2 * MATRIX_COLS;
     constexpr uint8_t MATRIX_SIZE = MATRIX_ROWS * MATRIX_COLS;
 
+    // -------------------------------------------------------------------------
+
     typedef uint64_t matrix_t;
     typedef bool matrix_key_t;
+
+    // -------------------------------------------------------------------------
     
     const uint8_t MATRIX_ROW_PINS[] = {4, 5, 6, 7};
     const uint8_t MATRIX_COL_PINS[] = {A0, 10, 16, 14, 15, 9};
 
+    // -------------------------------------------------------------------------
+
     extern matrix_t matrix_all;
+
+    // -------------------------------------------------------------------------
 
     void init_matrix_pins();
     void read_matrix();
-    void print_matrix(uint64_t matrix);
     void get_full_matrix();
+
+    // -------------------------------------------------------------------------
 
     // set the key in the left matrix using local row and column indexes for the left matrix
     // (0, 0) = ESC

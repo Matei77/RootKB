@@ -13,8 +13,6 @@ namespace app_com {
     };
 
     void manage_app_request();
-    void receive_layout();
-    void receive_rgb();
     void send_config();
 
 } // namespace app_com

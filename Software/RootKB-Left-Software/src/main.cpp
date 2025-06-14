@@ -15,8 +15,6 @@ void setup() {
     keyboard::init_keyboard();
     rgb::init_rgb();
     oled::init_oled();
-    // data_manager::init_eeprom();
-    // data_manager::save_layout(keys::initial_layout);
 
     delay(1000);
 }
@@ -25,6 +23,6 @@ void loop() {
     rgb::light_rgb_effect();
     oled::display_logo();
     matrix::get_full_matrix();
-    keyboard::send_keys();
-    // app_com::receive_layout();
+    keyboard::process_keypresses();
+    app_com::manage_app_request();
 }

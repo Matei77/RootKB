@@ -2,7 +2,7 @@
 
 namespace rgb {
     bool leds_reset_needed = true;
-    rgb_info_t rgb_info = {rgb_mode_t::NONE, 0, 0, 0};
+    rgb_info_t rgb_info = {rgb_mode_t::NONE, 250, 250, 250};
     CRGB leds[NUM_LEDS];
 
     const uint64_t effect_speed = 50;
@@ -20,9 +20,7 @@ namespace rgb {
         rgb_info.saturation = data_manager::get_rgb_saturation();
         rgb_info.brightness = data_manager::get_rgb_brightness();
         
-        if (rgb_info.mode != rgb_mode_t::RAINBOW) {
-            leds_reset_needed = true;
-        } 
+        reset_leds_if_needed();
     }
 
     // -------------------------------------------------------------------------
@@ -37,6 +35,14 @@ namespace rgb {
             FastLED.show();
             
             leds_reset_needed = false;
+        }
+    }
+
+    // -------------------------------------------------------------------------
+
+    void reset_leds_if_needed() {
+        if (rgb_info.mode != rgb_mode_t::RAINBOW) {
+            leds_reset_needed = true;
         }
     }
 
@@ -56,7 +62,7 @@ namespace rgb {
             send_rgb_info_to_right_half();
             display_rgb_info();
 
-            leds_reset_needed = true;
+            reset_leds_if_needed();
             set_all_leds(rgb_info.hue, rgb_info.saturation, rgb_info.brightness);
 
             data_manager::save_rgb_hue(rgb_info.hue);
@@ -76,7 +82,7 @@ namespace rgb {
             send_rgb_info_to_right_half();
             display_rgb_info();
 
-            leds_reset_needed = true;
+            reset_leds_if_needed();
             set_all_leds(rgb_info.hue, rgb_info.saturation, rgb_info.brightness);
 
             data_manager::save_rgb_hue(rgb_info.hue);
@@ -95,7 +101,7 @@ namespace rgb {
             send_rgb_info_to_right_half();
             display_rgb_info();
 
-            leds_reset_needed = true;
+            reset_leds_if_needed();
             set_all_leds(rgb_info.hue, rgb_info.saturation, rgb_info.brightness);
 
             data_manager::save_rgb_brightness(rgb_info.brightness);
@@ -111,7 +117,7 @@ namespace rgb {
             send_rgb_info_to_right_half();
             display_rgb_info();
 
-            leds_reset_needed = true;
+            reset_leds_if_needed();
             set_all_leds(rgb_info.hue, rgb_info.saturation, rgb_info.brightness);
 
             data_manager::save_rgb_brightness(rgb_info.brightness);
@@ -134,7 +140,7 @@ namespace rgb {
             send_rgb_info_to_right_half();
             display_rgb_info();
 
-            leds_reset_needed = true;
+            reset_leds_if_needed();
             set_all_leds(rgb_info.hue, rgb_info.saturation, rgb_info.brightness);
 
             data_manager::save_rgb_saturation(rgb_info.saturation);
@@ -154,7 +160,7 @@ namespace rgb {
             send_rgb_info_to_right_half();
             display_rgb_info();
 
-            leds_reset_needed = true;
+            reset_leds_if_needed();
             set_all_leds(rgb_info.hue, rgb_info.saturation, rgb_info.brightness);
 
             data_manager::save_rgb_saturation(rgb_info.saturation);
@@ -166,9 +172,7 @@ namespace rgb {
 
     void mode_up() {
         rgb_info.mode = (rgb_mode_t)((rgb_info.mode + 1) % rgb_mode_t::EFFECTS_NR);
-        if (rgb_info.mode != rgb_mode_t::RAINBOW) {
-            leds_reset_needed = true;
-        }
+        reset_leds_if_needed();
 
         send_rgb_info_to_right_half();
         data_manager::save_rgb_mode(rgb_info.mode);
@@ -176,33 +180,32 @@ namespace rgb {
 
     void mode_down() {
         rgb_info.mode = (rgb_mode_t)((rgb_info.mode + EFFECTS_NR - 1) % rgb_mode_t::EFFECTS_NR);
-        if (rgb_info.mode != rgb_mode_t::RAINBOW) {
-            leds_reset_needed = true;
-        }
+        reset_leds_if_needed();
 
         send_rgb_info_to_right_half();
         data_manager::save_rgb_mode(rgb_info.mode);
     }
 
     // -------------------------------------------------------------------------
-    // Sending rgb info to right half or app
+    // Functions for sending rgb info over serial
 
     void send_rgb_info_to_right_half() {
         right_half_com::send_request(right_half_com::request_t::SET_RGB);
-        send_rgb_info_on_serial(Serial1);
+        serial::safe_write_serial(Serial1, (byte *)&rgb_info, sizeof(rgb_info));
     }
 
-    void send_rgb_info_on_serial(Stream& serial) {
-        size_t written_bytes = 0;
-        while (written_bytes != sizeof(rgb_info)) {
-            size_t bytes_left = sizeof(rgb_info) - written_bytes;
-            if (serial.availableForWrite() >= (int)bytes_left) {
-                size_t count = serial.write((byte *)&rgb_info + written_bytes, bytes_left);
-                written_bytes += count;
-            }
-        }
-        
-        serial.flush();
+    void send_rgb_info_to_app() {
+        serial::safe_write_serial(Serial, (byte *)&rgb_info, sizeof(rgb_info));
+    }
+
+    // -------------------------------------------------------------------------
+    // Function for receiving rgb info over serial
+
+    void receive_rgb_info_from_app() {
+        serial::safe_read_serial(Serial, (byte *)&rgb_info, sizeof(rgb_info));
+        reset_leds_if_needed();
+        send_rgb_info_to_right_half();
+        data_manager::save_rgb((uint8_t)rgb_info.mode, rgb_info.hue, rgb_info.saturation, rgb_info.brightness);
     }
 
     // -------------------------------------------------------------------------

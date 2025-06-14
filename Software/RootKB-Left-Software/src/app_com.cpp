@@ -1,7 +1,7 @@
 #include "app_com.h"
 
 namespace app_com {
-    const uint64_t app_com_read_interval = 5;
+    const uint64_t app_com_read_interval = 50;
     uint64_t app_com_reset_time = 0;
     
     // -------------------------------------------------------------------------
@@ -15,11 +15,11 @@ namespace app_com {
                 
                 switch (request) {
                     case LAYOUT_UPLOAD: 
-                        receive_layout();
+                        keyboard::receive_layout_from_app();
                         break;
                         
                     case RGB_UPLOAD:
-                        receive_rgb();
+                        rgb::receive_rgb_info_from_app();
                         break;
 
                     case GET_CONFIG:
@@ -34,33 +34,12 @@ namespace app_com {
             app_com_reset_time = millis() + app_com_read_interval;
         }     
     }
-
-    // -------------------------------------------------------------------------
-
-    void receive_layout() {
-        size_t read_bytes = 0;
-        while (read_bytes != sizeof(keyboard::layout)) {
-            size_t bytes_left = sizeof(keyboard::layout) - read_bytes;
-            if (Serial.available() >= int(bytes_left)) {
-                size_t count = Serial.readBytes((byte *)&keyboard::layout + read_bytes, bytes_left);
-                read_bytes += count;
-            }
-        }
-        data_manager::save_layout(keyboard::layout);
-    }
     
-    void receive_rgb() {
-        
-    }
-
     // -------------------------------------------------------------------------
-
-    void send_layout() {
-
-    }
     
     void send_config() {
-        rgb::send_rgb_info_on_serial(Serial);
+        rgb::send_rgb_info_to_app();
+        keyboard::send_layout_to_app();
     }
 
 }  // namespace app_com

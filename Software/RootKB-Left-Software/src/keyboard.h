@@ -1,6 +1,5 @@
 #pragma once
 
-#include <stdint.h>
 #include <Arduino.h>
 #include <Keyboard.h>
 
@@ -8,6 +7,7 @@
 #include "rgb.h"
 #include "data_manager.h"
 #include "kb_conf.h"
+#include "serial.h"
 
 using namespace kb_conf;
 
@@ -15,7 +15,10 @@ namespace keyboard {
     extern raw_keycode_t layout[LAYERS][ROWS][COLS];
 
     void init_keyboard();
-    void send_keys();
+    void process_keypresses();
+
+    void receive_layout_from_app();
+    void send_layout_to_app();
 
 
     // const raw_keycode_t initial_layout[LAYERS_NUM][MATRIX_ROWS][MATRIX_COLS_BOTH] = {

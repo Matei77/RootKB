@@ -6,6 +6,7 @@
 #include "oled.h"
 #include "right_half_com.h"
 #include "data_manager.h"
+#include "serial.h"
 
 namespace rgb {
     #define NUM_LEDS 22
@@ -29,18 +30,25 @@ namespace rgb {
 
     void init_rgb();
     void set_all_leds(uint8_t hue, uint8_t saturation, uint8_t brightness);
+    void reset_leds_if_needed();
+
     void hue_up();
     void hue_down();
     void brightness_up();
     void brightness_down();
     void saturation_up();
     void saturation_down();
-    void send_rgb_info_to_right_half();
-    void send_rgb_info_on_serial(Stream& serial);
-    void display_rgb_info();
-    void rainbow_effect();
     void mode_up();
     void mode_down();
+    
+    void send_rgb_info_to_right_half();
+    void send_rgb_info_to_app();
+
+    void receive_rgb_info_from_app();
+    
+    void display_rgb_info();
+
+    void rainbow_effect();
     void light_rgb_effect();
 
 } // namespace rgb

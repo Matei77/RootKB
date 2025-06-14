@@ -27,11 +27,7 @@ namespace keyboard {
 
     // -------------------------------------------------------------------------
 
-    void init_keyboard() {
-        Keyboard.begin();
-
-        data_manager::load_layout(layout);
-
+    void init_layout_keys_masks() {
         // set the masks for the layers
         for (uint8_t row_index = 0; row_index < ROWS; ++row_index) {
             for (uint8_t col_index = 0; col_index < COLS; ++col_index) {
@@ -48,7 +44,17 @@ namespace keyboard {
 
     // -------------------------------------------------------------------------
 
-    void send_keys() {
+    void init_keyboard() {
+        Keyboard.begin();
+
+        data_manager::load_layout(layout);
+
+        init_layout_keys_masks();
+    }
+
+    // -------------------------------------------------------------------------
+
+    void process_keypresses() {
         uint64_t read_matrix_state = matrix::matrix_all;
 
         if (read_matrix_state != last_read_matrix_state) {
@@ -59,8 +65,6 @@ namespace keyboard {
             if (matrix_state != read_matrix_state) {
                 matrix_state = read_matrix_state;
                 
-                // Serial.println("matrix state:");
-                // matrix::print_matrix(matrix_state);
                 
                 if (matrix_state & layer1_mask) {
                     current_layer = 1;
@@ -132,4 +136,17 @@ namespace keyboard {
         }
         last_read_matrix_state = read_matrix_state;
     }
+
+    // -------------------------------------------------------------------------
+
+    void receive_layout_from_app() {
+        serial::safe_read_serial(Serial, (byte *)&layout, sizeof(layout));
+        init_layout_keys_masks();
+        data_manager::save_layout(layout);
+    }
+
+    void send_layout_to_app() {
+        serial::safe_write_serial(Serial, (byte *)&layout, sizeof(layout));
+    }
+
 } // namespace keyboard
