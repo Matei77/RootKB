@@ -18,6 +18,8 @@ namespace rgb {
         NONE,
         ALL,
         RAINBOW,
+        COLOR_CYCLE,
+        WAVE,
         EFFECTS_NR
     };
 
@@ -48,7 +50,10 @@ namespace rgb {
     
     void display_rgb_info();
 
+    void breathing_effect();
     void rainbow_effect();
+    void color_cycle_effect();
+    void wave_effect();
     void light_rgb_effect();
 
 } // namespace rgb

@@ -41,7 +41,7 @@ namespace rgb {
     // -------------------------------------------------------------------------
 
     void reset_leds_if_needed() {
-        if (rgb_info.mode != rgb_mode_t::RAINBOW) {
+        if (rgb_info.mode == rgb_mode_t::NONE || rgb_info.mode == rgb_mode_t::ALL) {
             leds_reset_needed = true;
         }
     }
@@ -50,7 +50,8 @@ namespace rgb {
     // Update hue
     
     void hue_up() {
-        if (rgb_info.mode != rgb_mode_t::ALL) {
+        if (rgb_info.mode != rgb_mode_t::ALL &&
+            rgb_info.mode != rgb_mode_t::WAVE ) {
             return;
         }
 
@@ -70,7 +71,8 @@ namespace rgb {
     }
 
     void hue_down() {
-        if (rgb_info.mode != rgb_mode_t::ALL) {
+        if (rgb_info.mode != rgb_mode_t::ALL &&
+            rgb_info.mode != rgb_mode_t::WAVE ) {
             return;
         }
 
@@ -93,6 +95,13 @@ namespace rgb {
     // Update brightness
 
     void brightness_up() {
+        if (rgb_info.mode != rgb_mode_t::ALL &&
+            rgb_info.mode != rgb_mode_t::RAINBOW &&
+            rgb_info.mode != rgb_mode_t::COLOR_CYCLE &&
+            rgb_info.mode != rgb_mode_t::WAVE) {
+            return;
+        }
+
         if (rgb_info.brightness + 25 > 250) {
             rgb_info.brightness = 250;
         } else {
@@ -109,6 +118,13 @@ namespace rgb {
     }
 
     void brightness_down() {
+        if (rgb_info.mode != rgb_mode_t::ALL &&
+            rgb_info.mode != rgb_mode_t::RAINBOW &&
+            rgb_info.mode != rgb_mode_t::COLOR_CYCLE &&
+            rgb_info.mode != rgb_mode_t::WAVE) {
+            return;
+        }
+
         if (rgb_info.brightness - 25 < 0) {
             rgb_info.brightness = 0;
         } else {
@@ -175,14 +191,18 @@ namespace rgb {
         reset_leds_if_needed();
 
         send_rgb_info_to_right_half();
+        display_rgb_info();
+
         data_manager::save_rgb_mode(rgb_info.mode);
     }
 
     void mode_down() {
         rgb_info.mode = (rgb_mode_t)((rgb_info.mode + EFFECTS_NR - 1) % rgb_mode_t::EFFECTS_NR);
         reset_leds_if_needed();
-
+        
         send_rgb_info_to_right_half();
+        display_rgb_info();
+
         data_manager::save_rgb_mode(rgb_info.mode);
     }
 
@@ -212,11 +232,11 @@ namespace rgb {
     // Show RGB confing on display
 
     void display_rgb_info() {
-        oled::show_rgb_info(rgb_info.brightness, rgb_info.hue, rgb_info.saturation);
+        oled::show_rgb_info(rgb_info.mode, rgb_info.brightness, rgb_info.hue, rgb_info.saturation);
     }
 
     // -------------------------------------------------------------------------
-    // Rainbow Effect
+    // Effects
 
     void rainbow_effect() {
         static uint8_t baseHue = 0;
@@ -227,9 +247,40 @@ namespace rgb {
             }
             FastLED.show();
             baseHue++;
+
             effect_reset_time = millis() + effect_speed;
         }
     }
+
+    void color_cycle_effect() {
+        static uint8_t baseHue = 0;
+
+        if (millis() > effect_reset_time) {
+            for (uint8_t i = 0; i < NUM_LEDS; ++i) {
+                leds[i] = CHSV(baseHue, 250, rgb_info.brightness);
+            }
+            FastLED.show();
+            baseHue++;
+
+            effect_reset_time = millis() + effect_speed;
+        }
+    }
+
+    void wave_effect() {
+        static uint8_t offset = 0;
+
+        if (millis() > effect_reset_time) {
+            for (uint8_t i = 0; i < NUM_LEDS; ++i) {
+                uint8_t pos = offset + i * 10;
+                leds[i] = CHSV(rgb_info.hue, 250, sin8(pos) * rgb_info.brightness / 250);
+            }
+            FastLED.show();
+            offset += 2;
+            
+            effect_reset_time = millis() + effect_speed;
+        }
+    }
+
 
     // -------------------------------------------------------------------------
     // Manage all light effects. Called in main loop
@@ -246,6 +297,14 @@ namespace rgb {
 
             case rgb_mode_t::RAINBOW:
                 rainbow_effect();
+                break;
+
+            case rgb_mode_t::COLOR_CYCLE:
+                color_cycle_effect();
+                break;
+
+            case rgb_mode_t::WAVE:
+                wave_effect();
                 break;
             
             default:

@@ -34,7 +34,8 @@ namespace oled {
         display_logo_flag = true;
     }
 
-    void show_rgb_info(uint8_t brightness, uint8_t hue, uint8_t saturation) {
+    void show_rgb_info(uint8_t mode, uint8_t brightness, uint8_t hue, uint8_t saturation) {
+        String mode_str = String(mode);
         String brightness_str = String(brightness);
         String hue_str = String(hue);
         String saturation_str = String(saturation);
@@ -44,7 +45,8 @@ namespace oled {
         display.setTextColor(WHITE);
         display.setCursor(0, 0);
 
-        display.print("B: " + brightness_str 
+        display.print("M: " + mode_str
+                  + "\nB: " + brightness_str 
                   + "\nH: " + hue_str 
                   + "\nS: " + saturation_str);
         

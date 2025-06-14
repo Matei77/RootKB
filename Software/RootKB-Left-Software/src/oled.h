@@ -6,6 +6,6 @@
 namespace oled {
     void init_oled();
     void display_logo();
-    void show_rgb_info(uint8_t brightness, uint8_t hue, uint8_t saturation);
+    void show_rgb_info(uint8_t mode, uint8_t brightness, uint8_t hue, uint8_t saturation);
 
 } // namespace oled

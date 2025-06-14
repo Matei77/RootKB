@@ -1,6 +1,4 @@
-#include <FastLED.h>
 #include "rgb.h"
-#include "data_manager.h"
 
 namespace rgb {
     bool leds_reset_needed = true;
@@ -22,9 +20,7 @@ namespace rgb {
         rgb_info.saturation = data_manager::get_rgb_saturation();
         rgb_info.brightness = data_manager::get_rgb_brightness();
         
-        if (rgb_info.mode != rgb_mode_t::RAINBOW) {
-            leds_reset_needed = true;
-        } 
+        reset_leds_if_needed();
     }
 
     // -------------------------------------------------------------------------
@@ -43,28 +39,26 @@ namespace rgb {
     }
 
     // -------------------------------------------------------------------------
+
+    void reset_leds_if_needed() {
+        if (rgb_info.mode == rgb_mode_t::NONE || rgb_info.mode == rgb_mode_t::ALL) {
+            leds_reset_needed = true;
+        }
+    }
+
+    // -------------------------------------------------------------------------
     // Read rgb_info from serial and save it to eeprom
     // This function is called when the SET_RGB request is received.
 
     void set_rgb() {
-        size_t read_bytes = 0;
-        while (read_bytes != sizeof(rgb_info)) {
-            size_t bytes_left = sizeof(rgb_info) - read_bytes;
-            if (Serial1.available() >= (int)bytes_left) {
-                size_t count = Serial1.readBytes((byte *)&rgb_info + read_bytes, bytes_left);
-                read_bytes += count;
-            }
-        }
+        serial::safe_read_serial(Serial1, (byte *)&rgb_info, sizeof(rgb_info));
 
-        if (rgb_info.mode != rgb_mode_t::RAINBOW) {
-            leds_reset_needed = true;
-        }
-
+        reset_leds_if_needed();
         data_manager::save_rgb((uint8_t)rgb_info.mode, rgb_info.hue, rgb_info.saturation, rgb_info.brightness);
     }
 
     // -------------------------------------------------------------------------
-    // Rainbow Effect
+    // Effects
 
     void rainbow_effect() {
         static uint8_t baseHue = 0;
@@ -75,9 +69,40 @@ namespace rgb {
             }
             FastLED.show();
             baseHue++;
+
             effect_reset_time = millis() + effect_speed;
         }
     }
+
+    void color_cycle_effect() {
+        static uint8_t baseHue = 0;
+
+        if (millis() > effect_reset_time) {
+            for (uint8_t i = 0; i < NUM_LEDS; ++i) {
+                leds[i] = CHSV(baseHue, 250, rgb_info.brightness);
+            }
+            FastLED.show();
+            baseHue++;
+
+            effect_reset_time = millis() + effect_speed;
+        }
+    }
+
+    void wave_effect() {
+        static uint8_t offset = 0;
+
+        if (millis() > effect_reset_time) {
+            for (uint8_t i = 0; i < NUM_LEDS; ++i) {
+                uint8_t pos = offset + i * 10;
+                leds[i] = CHSV(rgb_info.hue, 250, sin8(pos) * rgb_info.brightness / 250);
+            }
+            FastLED.show();
+            offset += 2;
+
+            effect_reset_time = millis() + effect_speed;
+        }
+    }
+
 
     // -------------------------------------------------------------------------
     // Manage all light effects. Called in main loop
@@ -94,6 +119,14 @@ namespace rgb {
 
             case rgb_mode_t::RAINBOW:
                 rainbow_effect();
+                break;
+
+            case rgb_mode_t::COLOR_CYCLE:
+                color_cycle_effect();
+                break;
+
+            case rgb_mode_t::WAVE:
+                wave_effect();
                 break;
             
             default:
