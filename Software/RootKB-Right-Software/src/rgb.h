@@ -39,7 +39,6 @@ namespace rgb {
     void reset_leds_if_needed();
     void set_rgb();
 
-    void breathing_effect();
     void rainbow_effect();
     void color_cycle_effect();
     void wave_effect();

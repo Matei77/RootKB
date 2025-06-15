@@ -11,7 +11,7 @@ namespace app_com {
             app_request_t request;
             
             if (Serial.available() > 0) {
-                request = (app_request_t)Serial.read();
+                serial::safe_read_serial(Serial, (byte *)&request, sizeof(request));
                 
                 switch (request) {
                     case LAYOUT_UPLOAD: 
@@ -24,9 +24,6 @@ namespace app_com {
 
                     case GET_CONFIG:
                         send_config();
-                        break;
-                        
-                    default:
                         break;
                 }
             }

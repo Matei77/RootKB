@@ -33,6 +33,7 @@ namespace rgb {
     void init_rgb();
     void set_all_leds(uint8_t hue, uint8_t saturation, uint8_t brightness);
     void reset_leds_if_needed();
+    void display_rgb_info();
 
     void hue_up();
     void hue_down();
@@ -45,12 +46,8 @@ namespace rgb {
     
     void send_rgb_info_to_right_half();
     void send_rgb_info_to_app();
-
     void receive_rgb_info_from_app();
-    
-    void display_rgb_info();
 
-    void breathing_effect();
     void rainbow_effect();
     void color_cycle_effect();
     void wave_effect();
